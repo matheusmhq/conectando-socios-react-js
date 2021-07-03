@@ -1,14 +1,14 @@
 import React from "react";
 import Avatar from "react-avatar";
 
-const AvatarDefault = ({ name }) => {
+const AvatarDefault = ({ name, size, color, fgColor }) => {
   return (
     <Avatar
-      color={"white"}
-      fgColor={"#007BFF"}
+      color={color || "white"}
+      fgColor={fgColor || "#007BFF"}
       maxInitials={2}
       round={true}
-      size="40"
+      size={size || 40}
       name={name}
       title={name}
     />

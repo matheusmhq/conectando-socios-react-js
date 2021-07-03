@@ -44,8 +44,8 @@ const InputDefault = ({
           cols={cols}
           plaintext={plaintext}
           readOnly={readOnly}
-          onChange={(v) => onchange(v.target.value)}
-          onBlur={(v) => {
+          onChange={(e) => onchange(e.target.value)}
+          onBlur={(e) => {
             if (onblur !== undefined) onblur();
           }}
           value={value}

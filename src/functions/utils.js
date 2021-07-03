@@ -19,7 +19,7 @@ export function FormatOptions(list) {
   var array = [];
   list.map((item) => {
     array.push({
-      name: item.nome,
+      name: item.name,
       id: item.id,
     });
   });
@@ -64,9 +64,9 @@ export function DisablePaste() {
 
 export function SetParamsUrl(history, obj) {
   var result = "";
-  obj.params.map((item, index) => {
+  obj.params.map((item) => {
     if (item.value != null && item.value != undefined && item.value != "") {
-      result += `${index == 0 ? `${obj.path}?` : "&"}${item.name}=${
+      result += `${result == "" ? `${obj.path}?` : "&"}${item.name}=${
         item.value
       }`;
     }

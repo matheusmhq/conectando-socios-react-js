@@ -20,9 +20,13 @@ export const getState = async (setOptionsState, setLoading) => {
   }
 };
 
-export const getCity = async (setOptionsCity, setLoading) => {
+export const getCity = async (setOptionsCity, setLoading, idState) => {
   try {
-    const response = await api.get(`/city`);
+    const response = await api.get(`/city`, {
+      params: {
+        idState,
+      },
+    });
     setOptionsCity(FormatOptionsCity(response.data.data));
   } catch (error) {
     alertDispatch("error", error?.response?.data?.message);
@@ -90,6 +94,17 @@ export const verifyEmail = async (email, setEmail, prevEmail, setLoading) => {
       setEmail("");
       alertDispatch("error", `Esse e-mail já está cadastrado no sistema`);
     }
+  } catch (error) {
+    alertDispatch("error", error?.response?.data?.message);
+  } finally {
+    if (setLoading != undefined) setLoading(false);
+  }
+};
+
+export const getTypes = async (setOptionsTypes, setLoading) => {
+  try {
+    const response = await api.get(`/project-types`);
+    setOptionsTypes(FormatOptions(response.data.data));
   } catch (error) {
     alertDispatch("error", error?.response?.data?.message);
   } finally {

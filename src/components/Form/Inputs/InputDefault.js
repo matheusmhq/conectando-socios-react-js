@@ -48,8 +48,8 @@ const InputDefault = ({
             required={required}
             name={name}
             mask={mask}
-            onChange={(v) => onchange(v.target.value)}
-            onBlur={(v) => {
+            onChange={(e) => onchange(e.target.value)}
+            onBlur={(e) => {
               if (onblur !== undefined) onblur();
             }}
             disabled={readOnly}
@@ -65,8 +65,8 @@ const InputDefault = ({
             name={name}
             plaintext={plaintext}
             readOnly={readOnly}
-            onChange={(v) => onchange(type != "file" ? v.target.value : v)}
-            onBlur={(v) => {
+            onChange={(e) => onchange(type != "file" ? e.target.value : e)}
+            onBlur={(e) => {
               if (onblur !== undefined) onblur();
             }}
             value={value}

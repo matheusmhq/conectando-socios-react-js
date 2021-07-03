@@ -65,7 +65,6 @@ function Routes() {
               <Switch>
                 <RouteWithMenu exact path="/login" component={Login} />
                 <RouteWithMenu exact path="/register" component={Register} />
-
                 <RouteWithMenu exact path="/" component={Home} />
                 <RouteWithMenu exact path="/how_work" component={HowWork} />
 
