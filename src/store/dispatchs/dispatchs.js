@@ -5,7 +5,5 @@ export const userDispatch = (data) => {
 };
 
 export const alertDispatch = (type, msg) => {
-  console.log("type " + type);
-  console.log("msg " + msg);
   store.dispatch({ type: "SHOW_ALERT", options: { type, msg } });
 };

@@ -3,8 +3,6 @@ const INITIAL_STATE = {
 };
 
 function alert(state = INITIAL_STATE, action) {
-  console.log("ACTION");
-  console.log(action);
   if (action.type === "SHOW_ALERT") {
     return { ...state, options: action.options };
   } else if (action.type === "HIDDEN_ALERT") {

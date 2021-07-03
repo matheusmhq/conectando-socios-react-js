@@ -1,6 +1,6 @@
 export function isAuthenticated() {
-  var user = localStorage.getItem("root");
-  if (user) return true;
+  var logged = localStorage.getItem("cs_logged");
+  if (logged) return true;
   else return false;
 }
 
@@ -16,11 +16,35 @@ export function ValidateEmail(email) {
 }
 
 export function FormatOptions(list) {
-  var array = [{ label: "Selecionar", value: 0 }];
+  var array = [];
   list.map((item) => {
     array.push({
-      label: item.nome,
-      value: item.id,
+      name: item.nome,
+      id: item.id,
+    });
+  });
+  return array;
+}
+
+export function FormatOptionsState(list) {
+  var array = [];
+  list.map((item) => {
+    array.push({
+      name: item.nome,
+      id: item.id,
+      uf: item.uf,
+    });
+  });
+  return array;
+}
+
+export function FormatOptionsCity(list) {
+  var array = [];
+  list.map((item) => {
+    array.push({
+      name: item.nome,
+      id: item.id,
+      ibge: item.ibge,
     });
   });
   return array;

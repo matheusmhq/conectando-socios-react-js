@@ -13,8 +13,6 @@ function AlertBox() {
   };
 
   useEffect(() => {
-    console.log("CHANGE");
-    console.log(alert);
     if (alert.type != undefined && alert.msg != undefined) {
       if (alert.type == "success") return toast.success(alert.msg, options);
       if (alert.type == "error") return toast.error(alert.msg, options);
