@@ -8,7 +8,7 @@ const AvatarDefault = ({ name }) => {
       fgColor={"#007BFF"}
       maxInitials={2}
       round={true}
-      size="50"
+      size="40"
       name={name}
       title={name}
     />
