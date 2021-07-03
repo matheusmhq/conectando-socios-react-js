@@ -8,6 +8,8 @@ import AlertBox from "components/AlertBox/AlertBox";
 import "styles/global.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import MenuDefault from "components/Menu/MenuDefault";
+import FooterDefault from "components/Footer/FooterDefault";
 
 import NotFound from "pages/NotFound/NotFound";
 
@@ -15,17 +17,39 @@ import Login from "pages/Customer/Login/Login";
 import Register from "pages/Customer/Register/Register";
 
 import Home from "pages/Home/Home";
+import HowWork from "pages/HowWork/HowWork";
+import PublishProject from "pages/PublishProject/PublishProject";
+import MyProjects from "pages/MyProjects/MyProjects/MyProjects";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={(props) =>
       isAuthenticated() ? (
-        <Component {...props} />
+        <>
+          <MenuDefault {...props} />
+          <Component {...props} />
+          <FooterDefault />
+        </>
       ) : (
-        <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+        <Redirect
+          to={{ pathname: "/login", state: { from: props.location } }}
+        />
       )
     }
+  />
+);
+
+const RouteWithMenu = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) => (
+      <>
+        <MenuDefault {...props} />
+        <Component {...props} />
+        <FooterDefault />
+      </>
+    )}
   />
 );
 
@@ -39,10 +63,22 @@ function Routes() {
               <AlertBox />
 
               <Switch>
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/register" component={Register} />
+                <RouteWithMenu exact path="/login" component={Login} />
+                <RouteWithMenu exact path="/register" component={Register} />
 
-                <Route exact path="/" component={Home} />
+                <RouteWithMenu exact path="/" component={Home} />
+                <RouteWithMenu exact path="/how_work" component={HowWork} />
+
+                <PrivateRoute
+                  exact
+                  path="/publish_project"
+                  component={PublishProject}
+                />
+                <PrivateRoute
+                  exact
+                  path="/my_projects"
+                  component={MyProjects}
+                />
 
                 <Route component={NotFound} />
               </Switch>

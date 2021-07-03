@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 import InputDefault from "components/Form/Inputs/InputDefault";
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
@@ -12,10 +13,9 @@ import {
   verifyEmail,
 } from "functions/requests/request_get";
 import { save } from "./js/api";
-import logo from "assets/images/logo.png";
-import { isAuthenticated } from "functions/utils";
 
 function Register({ history }) {
+  const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -40,7 +40,7 @@ function Register({ history }) {
   const [optionsCity, setOptionsCity] = useState([]);
 
   useEffect(() => {
-    if (isAuthenticated()) history.push("/");
+    if (user?.data?.id != undefined) history.push("/");
   }, []);
 
   useEffect(() => {
@@ -91,7 +91,7 @@ function Register({ history }) {
   if (loading)
     return (
       <div className="main-login">
-        <Loading variant={"light"} customClass="pt-5" />
+        <Loading customClass="pt-5" />
       </div>
     );
   else {
@@ -99,15 +99,14 @@ function Register({ history }) {
       <div className="main-login d-flex justify-content-center align-items-center">
         <Container>
           <div className="container-login" style={{ maxWidth: 1144 }}>
-            <img src={logo} />
-            <h1 className="my-5">Faça seu cadastro</h1>
+            <h1 className="mb-5">Faça seu cadastro</h1>
 
             <Row className="w-100">
               <Col md={6}>
                 <InputDefault
-                  label={"Nome"}
+                  label={"Nome Completo"}
                   name={"name"}
-                  placeholder="Informe o nome"
+                  placeholder="Informe o nome completo"
                   required={true}
                   onchange={setName}
                   value={name}
@@ -169,7 +168,7 @@ function Register({ history }) {
                 <InputDefault
                   label={"Logradouro"}
                   name={"address"}
-                  placeholder="Informe o Logradouro"
+                  placeholder="Informe o logradouro"
                   required={true}
                   onchange={setAddress}
                   value={address}
@@ -181,7 +180,7 @@ function Register({ history }) {
                 <InputDefault
                   label={"Número"}
                   name={"number"}
-                  placeholder="Informe o Número"
+                  placeholder="Informe o número"
                   required={true}
                   onchange={setNumber}
                   value={number}
@@ -193,7 +192,7 @@ function Register({ history }) {
                 <InputDefault
                   label={"Bairro"}
                   name={"district"}
-                  placeholder="Informe o Bairro"
+                  placeholder="Informe o bairro"
                   required={true}
                   onchange={setDisctric}
                   value={district}
@@ -205,7 +204,7 @@ function Register({ history }) {
                 <InputDefault
                   label={"Complemento"}
                   name={"complement"}
-                  placeholder="Informe o Complemento"
+                  placeholder="Informe o complemento"
                   onchange={setComplement}
                   value={complement}
                   errors={errors}
@@ -273,7 +272,7 @@ function Register({ history }) {
                   label={"Senha"}
                   name={"password"}
                   type={"password"}
-                  placeholder="Informe a Senha"
+                  placeholder="Informe a senha"
                   required={true}
                   onchange={setPassword}
                   value={password}
@@ -287,7 +286,7 @@ function Register({ history }) {
                   label={"Confirmar senha"}
                   name={"confirm"}
                   type={"password"}
-                  placeholder="Confirme a Senha"
+                  placeholder="Confirme a senha"
                   required={true}
                   onchange={setConfirmPassword}
                   value={confirmPassword}

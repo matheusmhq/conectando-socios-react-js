@@ -1,32 +1,40 @@
 import React, { useState, useEffect } from "react";
 import { Container, Col } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 import InputDefault from "components/Form/Inputs/InputDefault";
 import BtnDefault from "components/Form/Buttons/BtnDefault";
-import { logar } from "./js/api";
-import logo from "assets/images/logo.png";
-import { isAuthenticated } from "functions/utils";
+import { signIn } from "./js/api";
+import { EnterPressed, ValidateEmail } from "functions/utils";
+import { alertDispatch } from "store/dispatchs/dispatchs";
 
 function Login({ history }) {
+  const user = useSelector((state) => state.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loadingSave, setLoadingSave] = useState(false);
   const [errors, setErrors] = useState("");
 
   useEffect(() => {
-    if (isAuthenticated()) history.push("/");
+    if (user?.data?.id != undefined) history.push("/");
   }, []);
 
-  const Logar = () => {
-    logar(email, password, setErrors, setLoadingSave);
+  const ValidateEmailLocal = () => {
+    if (!ValidateEmail(email) && email != "") {
+      setEmail("");
+      alertDispatch("error", "E-mail inválido");
+    }
+  };
+
+  const SignIn = () => {
+    signIn(email, password, setErrors, setLoadingSave);
   };
 
   return (
     <div className="main-login d-flex justify-content-center align-items-center">
       <Container>
         <div className="container-login">
-          <img src={logo} />
-          <h1 className="my-5">Faça seu login</h1>
+          <h1 className="mb-5">Faça seu login</h1>
 
           <Col md={12}>
             <InputDefault
@@ -34,6 +42,7 @@ function Login({ history }) {
               name={"email"}
               placeholder="Informe o e-mail"
               required={true}
+              onblur={ValidateEmailLocal}
               onchange={setEmail}
               value={email}
               errors={errors}
@@ -50,6 +59,7 @@ function Login({ history }) {
               onchange={setPassword}
               value={password}
               errors={errors}
+              onkeypress={(e) => EnterPressed(e, SignIn)}
             />
           </Col>
 
@@ -67,7 +77,7 @@ function Login({ history }) {
               size={"lg"}
               title={"Entrar"}
               block={true}
-              onclick={Logar}
+              onclick={SignIn}
             />
           </Col>
         </div>

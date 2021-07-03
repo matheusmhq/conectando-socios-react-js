@@ -1,9 +1,16 @@
 :root {
-  --brand_blue: #0069d9;
+  --brand_blue: #007bff;
+  --brand_gray: #777;
+  --light_gray: #f4f4f4;
+}
+
+html,
+body {
+  background-color: var(--light_gray);
 }
 
 .main-login {
-  background-color: var(--brand_blue);
+  background-color: var(--light_gray);
   min-height: 100vh;
 }
 
@@ -31,4 +38,104 @@
 
 .container-login btn-register:hover {
   color: black;
+}
+
+.user-img {
+  width: 50px;
+}
+
+.main-logo {
+  width: 150px;
+  cursor: pointer;
+}
+
+.dropdown-user .dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-user .dropdown-item {
+  padding: 10px 14px;
+  color: var(--brand_gray);
+}
+
+.dropdown-user .dropdown-item:hover {
+  background-color: var(--brand_blue) !important;
+  color: white !important;
+}
+
+.dropdown-user-item svg {
+  margin-right: 10px;
+}
+
+.dropdown-user .user {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-user .user .user-name {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.dropdown-user .dropdown-header {
+  max-width: 200px;
+  min-width: 180px;
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.nav-menu a {
+  color: white !important;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.dropdown-projects .item-projects {
+  color: var(--brand_gray) !important;
+}
+
+.dropdown-projects .item-projects:hover {
+  background-color: var(--brand_blue);
+  color: white !important;
+}
+
+/* Not Found */
+.main-not-found {
+  background-color: var(--light_gray);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-not-found {
+  padding: 40px;
+  border-radius: 4px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-not-found .warning {
+  color: var(--brand_gray);
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: var(--brand_blue);
+  padding: 10px 0;
+  color: white;
+  text-align: center;
 }

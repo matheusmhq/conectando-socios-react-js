@@ -22,7 +22,6 @@ const InputDefault = ({
   errors,
   onkeypress,
   maxlength,
-  formtext,
 }) => {
   var border = "";
   var form_c = "form-control";
