@@ -6,7 +6,7 @@ import "./styles.css";
 const Loading = ({ customStyles, customClass, variant }) => {
   return (
     <div
-      className={`loading-main d-flex justify-content-center align-items-center ${customClass}`}
+      className={`loading-main d-flex justify-content-center  ${customClass}`}
     >
       <Spinner
         animation="border"

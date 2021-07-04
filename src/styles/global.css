@@ -9,6 +9,28 @@ body {
   background-color: var(--light_gray) !important;
 }
 
+.container-fluid {
+  max-width: 1144px;
+}
+
+.limit-line-1 {
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.limit-line-2 {
+  white-space: pre-wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
 .limit-line-3 {
   white-space: pre-wrap;
   overflow: hidden;
@@ -182,30 +204,76 @@ footer {
 }
 
 /* Card Project */
+.card-project .project-container-title {
+  width: 76%;
+}
+
+.card-project .project-container-details {
+  width: 20%;
+}
+
 .project-title {
   font-size: 20px;
   font-weight: bold;
-  white-space: pre-wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 }
 
 .project-date {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--brand_gray);
 }
 
 .project-description {
-  min-height: 72px;
+  font-size: 16px;
 }
 
 .project-tag {
   background-color: var(--brand_blue);
   color: white;
   border-radius: 4px;
-  font-size: 10px;
+  font-size: 12px;
   padding: 2px 10px;
+}
+
+.card-project .card-footer {
+  font-size: 12px;
+}
+
+@media screen and (max-width: 992px) {
+  .card-project .project-container-title {
+    width: 70%;
+  }
+
+  .card-project .project-container-details {
+    width: 26%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-project .project-container-title {
+    width: 60%;
+  }
+
+  .card-project .project-container-details {
+    width: 36%;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-date {
+    font-size: 10px;
+  }
+
+  .project-tag {
+    font-size: 10px;
+  }
+
+  .card-project .card-footer {
+    font-size: 10px;
+  }
+
+  .card-project button {
+    font-size: 10px;
+  }
 }

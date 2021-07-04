@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarker,
@@ -33,29 +33,29 @@ function CardProject({ history, ...props }) {
     <Card className="mb-3 card-project">
       <Card.Body>
         <Card.Title className="d-flex justify-content-between">
-          <div>
-            <h2 className="project-title">{title}</h2>
-            <div className="d-flex">
-              <p className="mb-0 mr-3 project-date">
-                Publicado: {moment(createdAt).format("DD/MM/YYYY")}
-              </p>
-              <div className="project-tag">
-                <p className="mb-0">{typeName}</p>
-              </div>
-            </div>
+          <div className="project-container-title">
+            <h2 className="project-title limit-line-2">{title}</h2>
           </div>
 
-          <div>
+          <div className="project-container-details">
             <Button block={true} variant="primary">
               Ver detalhes
             </Button>
           </div>
         </Card.Title>
+        <Card.Text className="d-flex align-items-center mb-3">
+          <p className="mb-0 mr-3 project-date">
+            Publicado: <strong>{moment(createdAt).format("DD/MM/YYYY")}</strong>
+          </p>
+          <div className="project-tag">
+            <p className="mb-0">{typeName}</p>
+          </div>
+        </Card.Text>
         <Card.Text className="project-description limit-line-3">
           {description}
         </Card.Text>
       </Card.Body>
-      <Card.Footer className="d-flex justify-content-between bg-white">
+      <Card.Footer className="card-footer d-flex justify-content-between bg-white">
         <div className="d-flex align-items-center">
           <div className="d-flex align-items-center mr-4">
             <AvatarDefault

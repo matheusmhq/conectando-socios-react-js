@@ -10,6 +10,7 @@ import "styles/global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuDefault from "components/Menu/MenuDefault";
 import FooterDefault from "components/Footer/FooterDefault";
+import ScrollToTop from "components/Others/ScrollToTop";
 
 import NotFound from "pages/NotFound/NotFound";
 
@@ -61,6 +62,7 @@ function Routes() {
           <BrowserRouter>
             <main>
               <AlertBox />
+              <ScrollToTop />
 
               <Switch>
                 <RouteWithMenu exact path="/login" component={Login} />

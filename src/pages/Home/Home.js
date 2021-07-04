@@ -76,10 +76,10 @@ function Home({ history }) {
     );
   };
 
-  if (loading) return <Loading />;
+  if (loading) return <Loading customClass="mt-4" />;
   else {
     return (
-      <Container className="container-100 my-5">
+      <Container fluid className="container-100 my-5">
         <Row>
           <Col md={3}>
             <SidebarDefault
