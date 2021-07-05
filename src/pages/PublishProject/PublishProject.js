@@ -25,17 +25,7 @@ function PublishProject({ history }) {
   }, []);
 
   const Save = () => {
-    save(
-      title,
-      setTitle,
-      idType,
-      setIdType,
-      description,
-      setDescription,
-      user,
-      setErrors,
-      setLoadingSave
-    );
+    save(title, idType, description, user, history, setErrors, setLoadingSave);
   };
 
   if (loading) return <Loading customClass="mt-4" />;

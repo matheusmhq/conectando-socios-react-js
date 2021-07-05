@@ -27,12 +27,12 @@ function Details({ history }) {
   const [showModalDeleteProject, setShowModalDeleteProject] = useState(false);
 
   useEffect(() => {
-    getProject(id, setProject, user, setLoading);
+    getProject(id, setProject, user, history, setLoading);
   }, []);
 
   const DeleteProject = () => {
     setShowModalDeleteProject(false);
-    deleteProject(project);
+    deleteProject(project, history);
   };
 
   if (loading) return <Loading customClass="mt-5" />;

@@ -4,12 +4,10 @@ import { validationFields } from "functions/validation";
 
 export const save = (
   title,
-  setTitle,
   idType,
-  setIdType,
   description,
-  setDescription,
   user,
+  history,
   setErrors,
   setLoadingSave
 ) => {
@@ -24,10 +22,8 @@ export const save = (
     })
     .then((response) => {
       if (response.status == 200) {
-        setTitle("");
-        setIdType(0);
-        setDescription("");
         alertDispatch("success", response.data.message);
+        history.push(`/details/${response.data.id}`);
       }
     })
     .catch((error) => {

@@ -1,7 +1,7 @@
 import api from "services/api";
 import { alertDispatch } from "store/dispatchs/dispatchs";
 
-export const getProject = (id, setProject, user, setLoading) => {
+export const getProject = (id, setProject, user, history, setLoading) => {
   setLoading(true);
   api
     .get(`/project/${id}`, {
@@ -16,18 +16,18 @@ export const getProject = (id, setProject, user, setLoading) => {
     })
     .catch((error) => {
       alertDispatch("error", error?.response?.data?.message);
-      window.location = "/";
+      history.push("/");
     })
     .finally(() => setLoading(false));
 };
 
-export const deleteProject = (project) => {
+export const deleteProject = (project, history) => {
   api
     .delete(`/project/${project.id}`)
     .then((response) => {
       if (response.status == 200) {
         alertDispatch("success", response.data.message);
-        window.location = "/";
+        history.push("/");
       }
     })
     .catch((error) => {
