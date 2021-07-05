@@ -6,6 +6,9 @@ export const saveProject = async (
   idProject,
   listProjects,
   setListProjects,
+  isList,
+  project,
+  setProject,
   setLoading
 ) => {
   try {
@@ -14,11 +17,15 @@ export const saveProject = async (
       idProject,
     });
     alertDispatch("success", response.data.message);
-    var newList = listProjects.map((item) => {
-      if (item.id == idProject) item.projectSaveId = response.data.id;
-      return item;
-    });
-    setListProjects(newList);
+    if (isList) {
+      var newList = listProjects.map((item) => {
+        if (item.id == idProject) item.projectSaveId = response.data.id;
+        return item;
+      });
+      setListProjects(newList);
+    } else {
+      setProject({ ...project, projectSaveId: response.data.id });
+    }
   } catch (error) {
     alertDispatch("error", error?.response?.data?.message);
   } finally {
@@ -31,16 +38,23 @@ export const removeProject = async (
   projectSaveId,
   listProjects,
   setListProjects,
+  isList,
+  project,
+  setProject,
   setLoading
 ) => {
   try {
     const response = await api.delete(`/project-save/${projectSaveId}`);
     alertDispatch("success", response.data.message);
-    var newList = listProjects.map((item) => {
-      if (item.id == idProject) item.projectSaveId = null;
-      return item;
-    });
-    setListProjects(newList);
+    if (isList) {
+      var newList = listProjects.map((item) => {
+        if (item.id == idProject) item.projectSaveId = null;
+        return item;
+      });
+      setListProjects(newList);
+    } else {
+      setProject({ ...project, projectSaveId: null });
+    }
   } catch (error) {
     alertDispatch("error", error?.response?.data?.message);
   } finally {

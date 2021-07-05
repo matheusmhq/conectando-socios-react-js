@@ -26,7 +26,7 @@ function MenuDefault({ history }) {
         bg="primary"
         variant="dark"
       >
-        <Container>
+        <Container fluid>
           <Navbar.Brand
             title={"Ir para a Home"}
             onClick={() => HandlerMenuMain("/")}

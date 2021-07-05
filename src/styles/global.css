@@ -2,6 +2,57 @@
   --brand_blue: #007bff;
   --brand_gray: #777;
   --light_gray: #f4f4f4;
+
+  --brand_whatsapp: #25d366;
+  --brand_facebook: #3b5998;
+  --brand_linkedin: #007bb6;
+  --brand_instagram: #833ab4;
+  --brand_twitter: #00aced;
+}
+
+.whatsapp {
+  background-color: var(--brand_whatsapp);
+}
+
+.facebook {
+  background-color: var(--brand_facebook);
+}
+
+.linkedin {
+  background-color: var(--brand_linkedin);
+}
+
+.instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+
+.twitter {
+  background-color: var(--brand_twitter);
 }
 
 html,
@@ -228,6 +279,7 @@ footer {
 
 .project-description {
   font-size: 16px;
+  white-space: pre-wrap;
 }
 
 .project-tag {
@@ -284,4 +336,85 @@ footer {
 
 .container-publish-project {
   border-radius: 4px;
+}
+
+/* Banner Default */
+.container-banner {
+  color: white;
+  text-align: center;
+}
+
+.container-banner-text {
+  position: absolute;
+}
+
+.banner-layer {
+  background-color: black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-main {
+  opacity: 0.3;
+}
+
+.banner-title {
+  font-weight: bold;
+  font-size: 50px;
+  margin: 0;
+}
+
+.banner-subtitle {
+  font-size: 20px;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .banner-title {
+    font-size: 20px;
+  }
+
+  .banner-subtitle {
+    font-size: 10px;
+  }
+}
+
+.modal-edit-project .modal-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Interest and Social */
+.container-interest {
+}
+
+.container-interest h5 {
+  font-size: 16px;
+}
+
+.container-interest h5 span {
+  font-size: 12px;
+}
+
+.container-social {
+  display: flex;
+}
+
+.container-social a {
+  border-radius: 100px;
+  display: block;
+  margin-right: 14px;
+  font-size: 14px;
+  color: white;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-social a:hover {
+  color: white;
 }

@@ -32,7 +32,7 @@ function Login({ history }) {
 
   return (
     <div className="main-login d-flex justify-content-center align-items-center">
-      <Container>
+      <Container fluid>
         <div className="container-login">
           <h1 className="mb-5">Faça seu login</h1>
 
@@ -73,7 +73,6 @@ function Login({ history }) {
           <Col md={12}>
             <BtnDefault
               loading={loadingSave}
-              md={12}
               size={"lg"}
               title={"Entrar"}
               block={true}

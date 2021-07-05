@@ -11,6 +11,7 @@ import { getProjects } from "./js/api";
 import { useDebounce } from "functions/hooks";
 import { UrlParams, SetParamsUrl } from "functions/utils";
 import MsgEmpty from "components/Others/MsgEmpty";
+import BannerDefault from "components/Others/BannerDefault";
 
 function Home({ history }) {
   const user = useSelector((state) => state.user);
@@ -79,61 +80,64 @@ function Home({ history }) {
   if (loading) return <Loading customClass="mt-4" />;
   else {
     return (
-      <Container fluid className="container-100 my-5">
-        <Row>
-          <Col md={3}>
-            <SidebarDefault
-              history={history}
-              idType={idType}
-              setIdType={setIdType}
-              idState={idState}
-              setIdState={setIdState}
-              idCity={idCity}
-              setIdCity={setIdCity}
-            />
-          </Col>
-
-          <Col md={9}>
-            <div className="form-control mb-3 d-flex mt-4 mt-md-0">
-              <input
-                className="w-100 input-search"
-                placeholder="Pesquisar"
-                onChange={(e) => setQuery(e.target.value)}
-                value={query}
+      <>
+        <BannerDefault />
+        <Container fluid className="container-100 my-5">
+          <Row>
+            <Col md={3}>
+              <SidebarDefault
+                history={history}
+                idType={idType}
+                setIdType={setIdType}
+                idState={idState}
+                setIdState={setIdState}
+                idCity={idCity}
+                setIdCity={setIdCity}
               />
-              <div>
-                <FontAwesomeIcon icon={faSearch} />
-              </div>
-            </div>
+            </Col>
 
-            {listProjects.length == 0 ? (
-              <MsgEmpty text={"Nenhum resultado encontrado"} />
-            ) : (
-              listProjects.map((item, index) => {
-                return (
-                  <CardProject
-                    key={index}
-                    history={history}
-                    id={item.id}
-                    name={item.name}
-                    idUser={item.idUser}
-                    title={item.title}
-                    description={item.description}
-                    createdAt={item.createdAt}
-                    idType={item.idType}
-                    typeName={item.typeName}
-                    cityName={item.cityName}
-                    uf={item.uf}
-                    projectSaveId={item?.projectSaveId}
-                    listProjects={listProjects}
-                    setListProjects={setListProjects}
-                  />
-                );
-              })
-            )}
-          </Col>
-        </Row>
-      </Container>
+            <Col md={9}>
+              <div className="form-control mb-3 d-flex mt-4 mt-md-0">
+                <input
+                  className="w-100 input-search"
+                  placeholder="Pesquisar"
+                  onChange={(e) => setQuery(e.target.value)}
+                  value={query}
+                />
+                <div>
+                  <FontAwesomeIcon icon={faSearch} />
+                </div>
+              </div>
+
+              {listProjects.length == 0 ? (
+                <MsgEmpty text={"Nenhum resultado encontrado"} />
+              ) : (
+                listProjects.map((item, index) => {
+                  return (
+                    <CardProject
+                      key={index}
+                      history={history}
+                      id={item.id}
+                      name={item.name}
+                      idUser={item.idUser}
+                      title={item.title}
+                      description={item.description}
+                      createdAt={item.createdAt}
+                      idType={item.idType}
+                      typeName={item.typeName}
+                      cityName={item.cityName}
+                      uf={item.uf}
+                      projectSaveId={item?.projectSaveId}
+                      listProjects={listProjects}
+                      setListProjects={setListProjects}
+                    />
+                  );
+                })
+              )}
+            </Col>
+          </Row>
+        </Container>
+      </>
     );
   }
 }

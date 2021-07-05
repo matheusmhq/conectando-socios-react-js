@@ -97,7 +97,7 @@ function Register({ history }) {
   else {
     return (
       <div className="main-login d-flex justify-content-center align-items-center">
-        <Container>
+        <Container fluid>
           <div className="container-login" style={{ maxWidth: 1144 }}>
             <h1 className="mb-5">Faça seu cadastro</h1>
 
@@ -298,7 +298,6 @@ function Register({ history }) {
                 <BtnDefault
                   customClass={"mt-4"}
                   loading={loadingSave}
-                  md={12}
                   size={"lg"}
                   title={"Cadastrar"}
                   block={true}

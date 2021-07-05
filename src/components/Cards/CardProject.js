@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Card, Button, Row, Col } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarker,
@@ -38,19 +38,23 @@ function CardProject({ history, ...props }) {
           </div>
 
           <div className="project-container-details">
-            <Button block={true} variant="primary">
+            <Button
+              onClick={() => history.push(`/details/${id}`)}
+              block={true}
+              variant="primary"
+            >
               Ver detalhes
             </Button>
           </div>
         </Card.Title>
-        <Card.Text className="d-flex align-items-center mb-3">
+        <div className="d-flex align-items-center mb-3">
           <p className="mb-0 mr-3 project-date">
             Publicado: <strong>{moment(createdAt).format("DD/MM/YYYY")}</strong>
           </p>
           <div className="project-tag">
             <p className="mb-0">{typeName}</p>
           </div>
-        </Card.Text>
+        </div>
         <Card.Text className="project-description limit-line-3">
           {description}
         </Card.Text>
@@ -86,9 +90,21 @@ function CardProject({ history, ...props }) {
               }
 
               if (projectSaveId == null || projectSaveId == undefined) {
-                saveProject(user.data.id, id, listProjects, setListProjects);
+                saveProject(
+                  user.data.id,
+                  id,
+                  listProjects,
+                  setListProjects,
+                  true
+                );
               } else {
-                removeProject(id, projectSaveId, listProjects, setListProjects);
+                removeProject(
+                  id,
+                  projectSaveId,
+                  listProjects,
+                  setListProjects,
+                  true
+                );
               }
             }}
           >

@@ -21,6 +21,7 @@ import Home from "pages/Home/Home";
 import HowWork from "pages/HowWork/HowWork";
 import PublishProject from "pages/PublishProject/PublishProject";
 import MyProjects from "pages/MyProjects/MyProjects/MyProjects";
+import Details from "pages/Details/Details";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -69,7 +70,6 @@ function Routes() {
                 <RouteWithMenu exact path="/register" component={Register} />
                 <RouteWithMenu exact path="/" component={Home} />
                 <RouteWithMenu exact path="/how_work" component={HowWork} />
-
                 <PrivateRoute
                   exact
                   path="/publish_project"
@@ -80,6 +80,7 @@ function Routes() {
                   path="/my_projects"
                   component={MyProjects}
                 />
+                <RouteWithMenu exact path="/details/:id" component={Details} />
 
                 <Route component={NotFound} />
               </Switch>

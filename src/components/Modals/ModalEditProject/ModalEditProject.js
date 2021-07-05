@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { Modal, Row, Col } from "react-bootstrap";
 
 import InputDefault from "components/Form/Inputs/InputDefault";
 import TextareaDefault from "components/Form/Inputs/TextareaDefault";
@@ -8,15 +7,20 @@ import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import BtnDefault from "components/Form/Buttons/BtnDefault";
 import { getTypes } from "functions/requests/request_get";
 import Loading from "components/Loading/Loading";
-import { save } from "./js/api";
+import { update } from "../js/api";
 
-function PublishProject({ history }) {
-  const user = useSelector((state) => state.user);
+const ModalEditProject = ({
+  setShowModalEditProject,
+  showModalEditProject,
+  project,
+  setProject,
+}) => {
   const [loading, setLoading] = useState(true);
   const [loadingSave, setLoadingSave] = useState(false);
-  const [title, setTitle] = useState("");
-  const [idType, setIdType] = useState(0);
-  const [description, setDescription] = useState("");
+  const [title, setTitle] = useState(project.title);
+  const [idType, setIdType] = useState(project.idType);
+  const [typeName, setTypeName] = useState("");
+  const [description, setDescription] = useState(project.description);
   const [optionsTypes, setOptionsTypes] = useState([]);
   const [errors, setErrors] = useState("");
 
@@ -24,29 +28,48 @@ function PublishProject({ history }) {
     getTypes(setOptionsTypes, setLoading);
   }, []);
 
-  const Save = () => {
-    save(
+  const CloseModal = () => {
+    setShowModalEditProject(false);
+  };
+
+  const Update = () => {
+    update(
       title,
-      setTitle,
       idType,
-      setIdType,
+      typeName,
       description,
-      setDescription,
-      user,
+      project,
+      setProject,
+      setShowModalEditProject,
       setErrors,
       setLoadingSave
     );
   };
 
-  if (loading) return <Loading customClass="mt-4" />;
-  else {
-    return (
-      <Container>
-        <div className="full-height">
-          <div className="bg-light my-5 p-4 container-publish-project">
-            <h4 className="title-default ml-0">Publicar um novo projeto</h4>
+  useEffect(() => {
+    var found = optionsTypes.find((item) => item.id == idType);
+    if (found != undefined) setTypeName(found.name);
+  }, [idType, optionsTypes]);
 
-            <Row>
+  return (
+    <Modal
+      show={showModalEditProject}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+      className="modal-edit-project"
+    >
+      <Modal.Header>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Editar projeto
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Row>
+          {loading ? (
+            <Loading />
+          ) : (
+            <>
               <Col md={8}>
                 <InputDefault
                   label={"Título"}
@@ -83,22 +106,33 @@ function PublishProject({ history }) {
                   errors={errors}
                 />
               </Col>
+            </>
+          )}
+        </Row>
+      </Modal.Body>
+      <Modal.Footer>
+        <Row className="w-100 d-flex justify-content-end">
+          <Col xs={6} md={4} lg={2}>
+            <BtnDefault
+              variant="outline-secondary"
+              title={"Cancelar"}
+              block={true}
+              onclick={CloseModal}
+            />
+          </Col>
 
-              <Col md={12}>
-                <BtnDefault
-                  loading={loadingSave}
-                  size={"lg"}
-                  title={"Publicar"}
-                  block={true}
-                  onclick={Save}
-                />
-              </Col>
-            </Row>
-          </div>
-        </div>
-      </Container>
-    );
-  }
-}
+          <Col xs={6} md={4} lg={2}>
+            <BtnDefault
+              loading={loadingSave}
+              title={"Salvar"}
+              block={true}
+              onclick={Update}
+            />
+          </Col>
+        </Row>
+      </Modal.Footer>
+    </Modal>
+  );
+};
 
-export default PublishProject;
+export default ModalEditProject;
