@@ -13,6 +13,10 @@ body {
   max-width: 1144px;
 }
 
+.full-height {
+  min-height: 100vh;
+}
+
 .limit-line-1 {
   white-space: pre-wrap;
   overflow: hidden;
@@ -262,7 +266,7 @@ footer {
   }
 
   .project-date {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .project-tag {
@@ -276,4 +280,8 @@ footer {
   .card-project button {
     font-size: 10px;
   }
+}
+
+.container-publish-project {
+  border-radius: 4px;
 }
