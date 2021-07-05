@@ -12,9 +12,10 @@ import moment from "moment";
 
 import AvatarDefault from "components/Avatar/AvatarDefault";
 import { saveProject, removeProject } from "functions/requests/request_post";
-import { getProject } from "./js/api";
+import { getProject, deleteProject } from "./js/api";
 import Loading from "components/Loading/Loading";
 import ModalEditProject from "components/Modals/ModalEditProject/ModalEditProject";
+import ModalDeleteProject from "components/Others/ModalConfirmDelete";
 import Social from "components/Others/Social";
 
 function Details({ history }) {
@@ -23,10 +24,16 @@ function Details({ history }) {
   const [loading, setLoading] = useState(true);
   const [project, setProject] = useState({});
   const [showModalEditProject, setShowModalEditProject] = useState(false);
+  const [showModalDeleteProject, setShowModalDeleteProject] = useState(false);
 
   useEffect(() => {
     getProject(id, setProject, user, setLoading);
   }, []);
+
+  const DeleteProject = () => {
+    setShowModalDeleteProject(false);
+    deleteProject(project);
+  };
 
   if (loading) return <Loading customClass="mt-5" />;
   else {
@@ -38,6 +45,14 @@ function Details({ history }) {
             showModalEditProject={showModalEditProject}
             project={project}
             setProject={setProject}
+          />
+        )}
+        {showModalDeleteProject && (
+          <ModalDeleteProject
+            setShowModalDeleteProject={setShowModalDeleteProject}
+            showModalDeleteProject={showModalDeleteProject}
+            title={"Tem certeza que deseja deletar esse projeto?"}
+            handler={DeleteProject}
           />
         )}
         <Card className="my-5 card-project">
@@ -53,13 +68,24 @@ function Details({ history }) {
 
               {user.data?.id == project.idUser && (
                 <div className="project-container-details">
-                  <Button
-                    block={true}
-                    variant="primary"
-                    onClick={() => setShowModalEditProject(true)}
-                  >
-                    Editar
-                  </Button>
+                  <div className="d-flex">
+                    <Button
+                      block={true}
+                      variant="primary"
+                      onClick={() => setShowModalEditProject(true)}
+                    >
+                      Editar
+                    </Button>
+
+                    <Button
+                      block={true}
+                      variant="danger"
+                      onClick={() => setShowModalDeleteProject(true)}
+                      className="mt-0 ml-1"
+                    >
+                      Deletar
+                    </Button>
+                  </div>
                 </div>
               )}
             </Card.Title>

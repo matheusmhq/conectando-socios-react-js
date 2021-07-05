@@ -20,3 +20,17 @@ export const getProject = (id, setProject, user, setLoading) => {
     })
     .finally(() => setLoading(false));
 };
+
+export const deleteProject = (project) => {
+  api
+    .delete(`/project/${project.id}`)
+    .then((response) => {
+      if (response.status == 200) {
+        alertDispatch("success", response.data.message);
+        window.location = "/";
+      }
+    })
+    .catch((error) => {
+      alertDispatch("error", error?.response?.data?.message);
+    });
+};

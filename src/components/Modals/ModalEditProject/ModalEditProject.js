@@ -7,7 +7,7 @@ import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import BtnDefault from "components/Form/Buttons/BtnDefault";
 import { getTypes } from "functions/requests/request_get";
 import Loading from "components/Loading/Loading";
-import { update } from "../js/api";
+import { update } from "./js/api";
 
 const ModalEditProject = ({
   setShowModalEditProject,
