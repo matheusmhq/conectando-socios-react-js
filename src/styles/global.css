@@ -259,17 +259,18 @@ footer {
 }
 
 /* Card Project */
-.card-project .project-container-title {
-  width: 76%;
-}
-
-.card-project .project-container-details {
-  width: 20%;
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .project-title {
   font-size: 20px;
   font-weight: bold;
+  color: black;
+}
+
+.project-title:hover {
+  color: black;
 }
 
 .project-date {
@@ -294,25 +295,7 @@ footer {
   font-size: 12px;
 }
 
-@media screen and (max-width: 992px) {
-  .card-project .project-container-title {
-    width: 70%;
-  }
-
-  .card-project .project-container-details {
-    width: 26%;
-  }
-}
-
 @media screen and (max-width: 600px) {
-  .card-project .project-container-title {
-    width: 60%;
-  }
-
-  .card-project .project-container-details {
-    width: 36%;
-  }
-
   .project-title {
     font-size: 16px;
   }
@@ -379,6 +362,10 @@ footer {
   .banner-subtitle {
     font-size: 10px;
   }
+
+  .modal-edit-project .modal-title {
+    font-size: 16px !important;
+  }
 }
 
 .modal-edit-project .modal-title {
@@ -421,4 +408,12 @@ footer {
 
 .my-projects-tabs .nav-link {
   color: rgb(139, 139, 139);
+}
+
+.btn-options {
+  background-color: #ddd !important;
+}
+
+.btn-options::after {
+  display: none !important;
 }

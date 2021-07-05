@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Card, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,21 +31,17 @@ function CardProject({ history, ...props }) {
     setListProjects,
   } = props;
   return (
-    <Card className="mb-3 card-project">
+    <Card className="mb-3 card-project ">
       <Card.Body>
         <Card.Title className="d-flex justify-content-between">
           <div className="project-container-title">
-            <h2 className="project-title limit-line-2">{title}</h2>
-          </div>
-
-          <div className="project-container-details">
-            <Button
-              onClick={() => history.push(`/details/${id}`)}
-              block={true}
-              variant="primary"
+            <Link
+              to={{ pathname: `/details/${id}` }}
+              title={title}
+              className="project-title limit-line-2"
             >
-              Ver detalhes
-            </Button>
+              {title}
+            </Link>
           </div>
         </Card.Title>
         <div className="d-flex align-items-center mb-3">

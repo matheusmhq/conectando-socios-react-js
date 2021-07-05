@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Container, Card, Button } from "react-bootstrap";
+import { Container, Card, Button, Dropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarker,
   faHeart as faHeartSolid,
+  faEllipsisV,
 } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import moment from "moment";
@@ -15,7 +16,7 @@ import { saveProject, removeProject } from "functions/requests/request_post";
 import { getProject, deleteProject } from "./js/api";
 import Loading from "components/Loading/Loading";
 import ModalEditProject from "components/Modals/ModalEditProject/ModalEditProject";
-import ModalDeleteProject from "components/Others/ModalConfirmDelete";
+import ModalDeleteProject from "components/Modals/ModalConfirmDelete";
 import Social from "components/Others/Social";
 
 function Details({ history }) {
@@ -55,38 +56,32 @@ function Details({ history }) {
             handler={DeleteProject}
           />
         )}
+
         <Card className="my-5 card-project">
           <Card.Body>
-            <Card.Title className="d-flex justify-content-between">
-              <div
-                className={`project-container-title ${
-                  user.data?.id != project.idUser && "w-100"
-                }`}
-              >
+            <Card.Title className="d-flex justify-content-between align-items-start">
+              <div className="project-container-title">
                 <h2 className="project-title">{project.title}</h2>
               </div>
 
               {user.data?.id == project.idUser && (
-                <div className="project-container-details">
-                  <div className="d-flex">
-                    <Button
-                      block={true}
-                      variant="primary"
+                <Dropdown alignRight className="d-flex justify-content-end">
+                  <Dropdown.Toggle variant="link" className="btn-options">
+                    <FontAwesomeIcon color={"#f4f4f4 "} icon={faEllipsisV} />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item
                       onClick={() => setShowModalEditProject(true)}
                     >
                       Editar
-                    </Button>
-
-                    <Button
-                      block={true}
-                      variant="danger"
+                    </Dropdown.Item>
+                    <Dropdown.Item
                       onClick={() => setShowModalDeleteProject(true)}
-                      className="mt-0 ml-1"
                     >
                       Deletar
-                    </Button>
-                  </div>
-                </div>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               )}
             </Card.Title>
             <div className="d-flex align-items-center mb-3">
