@@ -63,7 +63,7 @@ function Details({ history }) {
                   user.data?.id != project.idUser && "w-100"
                 }`}
               >
-                <h2 className="project-title limit-line-2">{project.title}</h2>
+                <h2 className="project-title">{project.title}</h2>
               </div>
 
               {user.data?.id == project.idUser && (

@@ -43,8 +43,6 @@ export const removeProject = async (
   setProject,
   setLoading
 ) => {
-  console.log("windwos");
-  console.log(window.location.pathname);
   try {
     const response = await api.delete(`/project-save/${projectSaveId}`);
     alertDispatch("success", response.data.message);
