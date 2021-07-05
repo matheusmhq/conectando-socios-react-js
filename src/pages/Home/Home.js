@@ -25,7 +25,6 @@ function Home({ history }) {
   const [idState, setIdState] = useState(
     parseInt(UrlParams().get("idState")) || 0
   );
-
   const [idCity, setIdCity] = useState(
     parseInt(UrlParams().get("idCity")) || 0
   );

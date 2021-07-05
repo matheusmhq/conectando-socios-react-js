@@ -71,7 +71,7 @@ export function SetParamsUrl(history, obj) {
       }`;
     }
   });
-  history.push(result);
+  if (result != "") history.push(result);
 }
 
 export function GenerateLinkWhatsapp(number, message) {

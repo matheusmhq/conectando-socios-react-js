@@ -418,3 +418,7 @@ footer {
 .container-social a:hover {
   color: white;
 }
+
+.my-projects-tabs .nav-link {
+  color: rgb(139, 139, 139);
+}

@@ -19,6 +19,7 @@ export const save = (
   instagram,
   password,
   confirmPassword,
+  history,
   setErrors,
   setLoadingSave
 ) => {
@@ -53,7 +54,7 @@ export const save = (
     .then((response) => {
       if (response.status == 200) {
         alertDispatch("success", response.data.message);
-        window.location.href = "/login";
+        history.push("/login");
       }
     })
     .catch((error) => {

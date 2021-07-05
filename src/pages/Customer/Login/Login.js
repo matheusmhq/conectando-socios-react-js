@@ -27,7 +27,7 @@ function Login({ history }) {
   };
 
   const SignIn = () => {
-    signIn(email, password, setErrors, setLoadingSave);
+    signIn(email, password, history, setErrors, setLoadingSave);
   };
 
   return (

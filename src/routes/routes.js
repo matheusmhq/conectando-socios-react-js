@@ -70,6 +70,7 @@ function Routes() {
                 <RouteWithMenu exact path="/register" component={Register} />
                 <RouteWithMenu exact path="/" component={Home} />
                 <RouteWithMenu exact path="/how_work" component={HowWork} />
+                <RouteWithMenu exact path="/details/:id" component={Details} />
                 <PrivateRoute
                   exact
                   path="/publish_project"
@@ -77,10 +78,9 @@ function Routes() {
                 />
                 <PrivateRoute
                   exact
-                  path="/my_projects"
+                  path="/my_projects/:tab"
                   component={MyProjects}
                 />
-                <RouteWithMenu exact path="/details/:id" component={Details} />
 
                 <Route component={NotFound} />
               </Switch>

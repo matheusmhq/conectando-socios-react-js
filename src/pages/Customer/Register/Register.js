@@ -83,6 +83,7 @@ function Register({ history }) {
       instagram,
       password,
       confirmPassword,
+      history,
       setErrors,
       setLoadingSave
     );

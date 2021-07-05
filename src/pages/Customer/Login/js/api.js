@@ -3,7 +3,7 @@ import { alertDispatch, userDispatch } from "store/dispatchs/dispatchs";
 import { validationFields } from "functions/validation";
 import { SaveLogged } from "functions/storage";
 
-export const signIn = (email, password, setErrors, setLoadingSave) => {
+export const signIn = (email, password, history, setErrors, setLoadingSave) => {
   if (!validationFields(setErrors)) return false;
   setLoadingSave(true);
   api
@@ -15,7 +15,7 @@ export const signIn = (email, password, setErrors, setLoadingSave) => {
       if (response.status == 200) {
         userDispatch(response.data.user);
         SaveLogged();
-        window.location.href = "/";
+        history.push("/");
       }
     })
     .catch((error) => {

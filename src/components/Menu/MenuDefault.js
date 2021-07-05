@@ -67,20 +67,20 @@ function MenuDefault({ history }) {
               </Nav.Link>
               <NavDropdown
                 className={`${
-                  menuMain === "/my_projects" && "active"
+                  menuMain.includes("/my_projects") && "active"
                 } dropdown-projects`}
                 title="Meus Projetos"
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item
                   className="item-projects"
-                  onClick={() => HandlerMenuMain("/my_projects")}
+                  onClick={() => HandlerMenuMain("/my_projects/published")}
                 >
                   Publicados
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   className="item-projects"
-                  onClick={() => HandlerMenuMain("/my_projects")}
+                  onClick={() => HandlerMenuMain("/my_projects/saved")}
                 >
                   Salvos
                 </NavDropdown.Item>
