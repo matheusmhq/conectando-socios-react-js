@@ -105,7 +105,7 @@ function Details({ history }) {
                   </>
                 )}
               </p>
-              <div className="project-tag">
+              <div title={project.typeName} className="project-tag">
                 <p className="mb-0">{project.typeName}</p>
               </div>
             </div>

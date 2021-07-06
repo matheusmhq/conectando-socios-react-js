@@ -59,7 +59,7 @@ function CardProject({ history, ...props }) {
               </>
             )}
           </p>
-          <div className="project-tag">
+          <div title={typeName} className="project-tag">
             <p className="mb-0">{typeName}</p>
           </div>
         </div>
