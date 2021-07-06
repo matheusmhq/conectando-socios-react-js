@@ -81,7 +81,7 @@ function Home({ history }) {
     return (
       <>
         <BannerDefault />
-        <Container fluid className="container-100 my-5">
+        <Container fluid className="my-5">
           <Row>
             <Col md={3}>
               <SidebarDefault

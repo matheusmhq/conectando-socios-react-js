@@ -61,10 +61,9 @@ function Routes() {
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
-            <main>
-              <AlertBox />
-              <ScrollToTop />
-
+            <AlertBox />
+            <ScrollToTop />
+            <main className="main-all">
               <Switch>
                 <RouteWithMenu exact path="/login" component={Login} />
                 <RouteWithMenu exact path="/register" component={Register} />

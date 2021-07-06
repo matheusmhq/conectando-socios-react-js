@@ -32,7 +32,7 @@ function PublishProject({ history }) {
   else {
     return (
       <Container>
-        <div className="full-height">
+        <div>
           <div className="bg-light my-5 p-4 container-publish-project">
             <h4 className="title-default ml-0">Publicar um novo projeto</h4>
 

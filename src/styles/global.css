@@ -64,6 +64,13 @@ body {
   max-width: 1144px;
 }
 
+.main-all {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
 .full-height {
   min-height: 100vh;
 }
@@ -107,13 +114,8 @@ body {
   border: none;
 }
 
-.container-100 {
-  min-height: 100vh;
-}
-
 .main-login {
   background-color: var(--light_gray);
-  min-height: 100vh;
 }
 
 .input-search {
