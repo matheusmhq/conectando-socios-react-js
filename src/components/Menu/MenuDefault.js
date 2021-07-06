@@ -34,7 +34,13 @@ function MenuDefault({ history }) {
             <img className="main-logo" src={logo} />
           </Navbar.Brand>
           {user?.data?.id != undefined ? (
-            <DropdownUser customClass={"d-lg-none"} history={history} />
+            <DropdownUser
+              customClass={"d-lg-none"}
+              history={history}
+              setMenuUser={setMenuUser}
+              menuUser={menuUser}
+              setMenuMain={setMenuMain}
+            />
           ) : (
             <Button
               className="d-lg-none text-primary font-weight-bold"

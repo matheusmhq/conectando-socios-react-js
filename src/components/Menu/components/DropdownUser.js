@@ -8,15 +8,13 @@ import { faSignInAlt, faCog } from "@fortawesome/free-solid-svg-icons";
 import AvatarDefault from "components/Avatar/AvatarDefault";
 
 const DropdownUser = ({
+  customClass,
   history,
   setMenuUser,
   menuUser,
   setMenuMain,
-  customClass,
 }) => {
   const user = useSelector((state) => state.user);
-  console.log("user");
-  console.log(user);
 
   function HandlerMenuUser(page) {
     setMenuUser(page);
