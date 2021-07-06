@@ -474,3 +474,33 @@ footer {
   background-color: var(--light_blue) !important;
   color: var(--brand_blue) !important;
 }
+
+/* How Work */
+.how-work {
+  border-radius: 4px;
+}
+
+.container-how-work h3 {
+  font-weight: bold;
+}
+
+.container-how-work p {
+  margin-bottom: 0;
+  font-size: 16px;
+  color: var(--brand_gray);
+}
+
+.container-user-doc p {
+  color: var(--brand_gray);
+  font-weight: bold;
+}
+
+.container-user-doc a {
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.container-user-doc a:hover {
+  color: black;
+}
