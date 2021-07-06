@@ -205,6 +205,16 @@ body {
   -webkit-box-orient: vertical;
 }
 
+@media screen and (max-width: 320px) {
+  .dropdown-user {
+    width: 50px !important;
+  }
+}
+
+.dropdown-user .dropdown-toggle {
+  padding: 0 !important;
+}
+
 .nav-menu a {
   color: white !important;
 }

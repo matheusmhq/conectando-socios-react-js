@@ -28,29 +28,36 @@ function MenuDefault({ history }) {
       >
         <Container fluid>
           <Navbar.Brand
+            className="mr-0 mr-md-2"
             title={"Ir para a Home"}
             onClick={() => HandlerMenuMain("/")}
           >
             <img className="main-logo" src={logo} />
           </Navbar.Brand>
-          {user?.data?.id != undefined ? (
-            <DropdownUser
-              customClass={"d-lg-none"}
-              history={history}
-              setMenuUser={setMenuUser}
-              menuUser={menuUser}
-              setMenuMain={setMenuMain}
+
+          <div className="d-flex">
+            {user?.data?.id != undefined ? (
+              <DropdownUser
+                customClass={"d-lg-none"}
+                history={history}
+                setMenuUser={setMenuUser}
+                menuUser={menuUser}
+                setMenuMain={setMenuMain}
+              />
+            ) : (
+              <Button
+                className="d-lg-none text-primary font-weight-bold"
+                variant="light"
+                onClick={() => history.push("/login")}
+              >
+                Entrar
+              </Button>
+            )}
+            <Navbar.Toggle
+              aria-controls="responsive-navbar-nav"
+              className="ml-3"
             />
-          ) : (
-            <Button
-              className="d-lg-none text-primary font-weight-bold"
-              variant="light"
-              onClick={() => history.push("/login")}
-            >
-              Entrar
-            </Button>
-          )}
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          </div>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto nav-menu">
               <Nav.Link
