@@ -34,7 +34,7 @@ function HowWork() {
               Publique um projeto e aguarde os interessados entrarem em contato.
             </p>
             <p className="text-smile">
-              Viu? É rápido e prático{" "}
+              Viu? É rápido, fácil e prático{" "}
               <FontAwesomeIcon color={"#007bff"} icon={faSmileWink} />
             </p>
           </Col>
