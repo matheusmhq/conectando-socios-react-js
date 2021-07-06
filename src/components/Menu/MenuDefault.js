@@ -10,8 +10,10 @@ function MenuDefault({ history }) {
   const pathname = window.location.pathname.toLocaleLowerCase();
   const [menuMain, setMenuMain] = useState(pathname);
   const [menuUser, setMenuUser] = useState("");
+  const [expanded, setExpanded] = useState(false);
 
   function HandlerMenuMain(page) {
+    setExpanded(false);
     setMenuUser("");
     setMenuMain(page);
     history.push(`${page}`);
@@ -20,6 +22,7 @@ function MenuDefault({ history }) {
   return (
     <>
       <Navbar
+        expanded={expanded}
         className="menu-default"
         collapseOnSelect
         expand="lg"
@@ -56,6 +59,7 @@ function MenuDefault({ history }) {
             <Navbar.Toggle
               aria-controls="responsive-navbar-nav"
               className="ml-3"
+              onClick={() => setExpanded(!expanded)}
             />
           </div>
           <Navbar.Collapse id="responsive-navbar-nav">
