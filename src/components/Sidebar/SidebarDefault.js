@@ -56,6 +56,7 @@ function SidebarDefault({ history, ...props }) {
           onchange={setIdCity}
           value={idCity}
           options={optionsCity}
+          customClass={"mb-0"}
         />
       </Col>
     </div>

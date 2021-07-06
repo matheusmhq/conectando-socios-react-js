@@ -33,7 +33,7 @@ function PublishProject({ history }) {
     return (
       <Container>
         <div>
-          <div className="bg-light my-5 p-4 container-publish-project">
+          <div className="bg-white my-5 p-4 container-publish-project">
             <h4 className="title-default ml-0">Publicar um novo projeto</h4>
 
             <Row>

@@ -1,10 +1,11 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 function HowWork() {
   return (
-    <div>
+    <Container fluid>
       <p>How Work</p>
-    </div>
+    </Container>
   );
 }
 

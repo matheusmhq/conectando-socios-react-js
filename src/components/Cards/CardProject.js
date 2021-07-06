@@ -22,6 +22,7 @@ function CardProject({ history, ...props }) {
     title,
     description,
     createdAt,
+    updatedAt,
     idType,
     typeName,
     cityName,
@@ -46,7 +47,17 @@ function CardProject({ history, ...props }) {
         </Card.Title>
         <div className="d-flex align-items-center mb-3">
           <p className="mb-0 mr-3 project-date">
-            Publicado: <strong>{moment(createdAt).format("DD/MM/YYYY")}</strong>
+            {createdAt == updatedAt ? (
+              <>
+                Publicado:{" "}
+                <strong>{moment(createdAt).format("DD/MM/YYYY")}</strong>
+              </>
+            ) : (
+              <>
+                Editado:{" "}
+                <strong>{moment(updatedAt).format("DD/MM/YYYY")}</strong>
+              </>
+            )}
           </p>
           <div className="project-tag">
             <p className="mb-0">{typeName}</p>

@@ -54,33 +54,33 @@ function MenuDefault({ history }) {
                 Home
               </Nav.Link>
               <Nav.Link
-                className={menuMain === "/how_work" && "active"}
-                onClick={() => HandlerMenuMain("/how_work")}
+                className={menuMain === "/how-work" && "active"}
+                onClick={() => HandlerMenuMain("/how-work")}
               >
                 Como Funciona
               </Nav.Link>
               <Nav.Link
-                className={menuMain === "/publish_project" && "active"}
-                onClick={() => HandlerMenuMain("/publish_project")}
+                className={menuMain === "/publish-project" && "active"}
+                onClick={() => HandlerMenuMain("/publish-project")}
               >
                 Publicar Projeto
               </Nav.Link>
               <NavDropdown
                 className={`${
-                  menuMain.includes("/my_projects") && "active"
+                  menuMain.includes("/my-projects") && "active"
                 } dropdown-projects`}
                 title="Meus Projetos"
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item
                   className="item-projects"
-                  onClick={() => HandlerMenuMain("/my_projects/published")}
+                  onClick={() => HandlerMenuMain("/my-projects/published")}
                 >
                   Publicados
                 </NavDropdown.Item>
                 <NavDropdown.Item
                   className="item-projects"
-                  onClick={() => HandlerMenuMain("/my_projects/saved")}
+                  onClick={() => HandlerMenuMain("/my-projects/saved")}
                 >
                   Salvos
                 </NavDropdown.Item>

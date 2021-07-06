@@ -1,5 +1,6 @@
 :root {
   --brand_blue: #007bff;
+  --light_blue: #007bff24;
   --brand_gray: #777;
   --light_gray: #f4f4f4;
 
@@ -144,7 +145,7 @@ body {
 }
 
 .container-login .btn-register {
-  color: black;
+  color: var(--brand_gray);
   cursor: pointer;
 }
 
@@ -208,8 +209,15 @@ body {
   color: white !important;
 }
 
+.dropdown-user .dropdown-menu .dropdown-item:hover {
+  background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
+}
+
 .active {
   font-weight: bold;
+  background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
 }
 
 .dropdown-projects .item-projects {
@@ -217,8 +225,8 @@ body {
 }
 
 .dropdown-projects .item-projects:hover {
-  background-color: var(--brand_blue);
-  color: white !important;
+  background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
 }
 
 /* Not Found */
@@ -243,6 +251,16 @@ body {
 .container-not-found .warning {
   color: var(--brand_gray);
   text-align: center;
+}
+
+.container-msg-empty {
+  color: var(--brand_gray);
+  text-align: center;
+}
+
+.container-msg-empty img {
+  width: 100px;
+  margin-bottom: 10px;
 }
 
 /* Footer */
@@ -412,10 +430,47 @@ footer {
   color: rgb(139, 139, 139);
 }
 
+.my-projects-tabs a:hover {
+  background-color: var(--light_blue);
+  color: var(--brand_blue);
+}
+
+.container-options a:hover {
+  background-color: var(--light_blue);
+  color: var(--brand_blue);
+}
+
 .btn-options {
   background-color: #ddd !important;
 }
 
 .btn-options::after {
   display: none !important;
+}
+
+/* SidebarConfig */
+.sidebar-config {
+  background-color: white;
+  border-radius: 4px;
+  padding: 20px 0;
+}
+
+.sidebar-config-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.sidebar-config-menu button {
+  background-color: #f4f4f4;
+  margin-bottom: 10px;
+  color: var(--brand_gray);
+  text-align: left;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.sidebar-config-active {
+  background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
 }

@@ -47,7 +47,7 @@ export const removeProject = async (
     const response = await api.delete(`/project-save/${projectSaveId}`);
     alertDispatch("success", response.data.message);
 
-    //For remove in page /my_project/saved
+    //For remove in page /my-projects/saved
     if (window.location.pathname.includes("saved")) {
       var newListSaved = listProjects.filter((item) => item.id != idProject);
       setListProjects(newListSaved);

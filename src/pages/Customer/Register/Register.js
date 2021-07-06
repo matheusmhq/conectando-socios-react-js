@@ -6,6 +6,7 @@ import InputDefault from "components/Form/Inputs/InputDefault";
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import BtnDefault from "components/Form/Buttons/BtnDefault";
 import Loading from "components/Loading/Loading";
+import { DisablePaste } from "functions/utils";
 import {
   getAddress,
   getCity,
@@ -46,6 +47,7 @@ function Register({ history }) {
   useEffect(() => {
     getCity(setOptionsCity, setLoading);
     getState(setOptionsState);
+    DisablePaste();
   }, []);
 
   const VerifyEmailLocal = () => {
@@ -270,6 +272,7 @@ function Register({ history }) {
 
               <Col md={6}>
                 <InputDefault
+                  customClass="disable-paste"
                   label={"Senha"}
                   name={"password"}
                   type={"password"}
@@ -284,6 +287,7 @@ function Register({ history }) {
 
               <Col md={6}>
                 <InputDefault
+                  customClass="disable-paste"
                   label={"Confirmar senha"}
                   name={"confirm"}
                   type={"password"}

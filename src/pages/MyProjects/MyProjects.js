@@ -8,7 +8,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import Loading from "components/Loading/Loading";
 import SidebarDefault from "components/Sidebar/SidebarDefault";
 import CardProject from "components/Cards/CardProject";
-import { getProjects } from "../js/api";
+import { getProjects } from "./js/api";
 import { useDebounce } from "functions/hooks";
 import { UrlParams, SetParamsUrl } from "functions/utils";
 import MsgEmpty from "components/Others/MsgEmpty";
@@ -44,7 +44,7 @@ function MyProjects({ history }) {
 
   const GetProjects = () => {
     var obj = {
-      path: `/my_projects/${tab}`,
+      path: `/my-projects/${tab}`,
       params: [
         {
           name: "query",
@@ -104,38 +104,7 @@ function MyProjects({ history }) {
             </Col>
 
             <Col md={9}>
-              <Nav
-                fill
-                variant="tabs"
-                className="my-projects-tabs mt-4 mt-md-0"
-              >
-                <Nav.Item>
-                  <Nav.Link
-                    disabled={tab == "published"}
-                    active={tab == "published"}
-                    onClick={() => {
-                      history.push(`/my_projects/published`);
-                      ClearFilters();
-                    }}
-                  >
-                    Projetos Publicados
-                  </Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link
-                    disabled={tab == "saved"}
-                    active={tab == "saved"}
-                    onClick={() => {
-                      history.push(`/my_projects/saved`);
-                      ClearFilters();
-                    }}
-                  >
-                    Projetos Salvos
-                  </Nav.Link>
-                </Nav.Item>
-              </Nav>
-
-              <div className="form-control mb-3 d-flex">
+              <div className="form-control mb-3 mt-3 mt-md-0 d-flex">
                 <input
                   className="w-100 input-search"
                   placeholder="Pesquisar"
@@ -146,6 +115,37 @@ function MyProjects({ history }) {
                   <FontAwesomeIcon icon={faSearch} />
                 </div>
               </div>
+
+              <Nav
+                fill
+                variant="tabs"
+                className="my-projects-tabs mt-4 mt-md-0"
+              >
+                <Nav.Item>
+                  <Nav.Link
+                    disabled={tab == "published"}
+                    active={tab == "published"}
+                    onClick={() => {
+                      ClearFilters();
+                      history.push(`/my-projects/published`);
+                    }}
+                  >
+                    Projetos Publicados
+                  </Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link
+                    disabled={tab == "saved"}
+                    active={tab == "saved"}
+                    onClick={() => {
+                      ClearFilters();
+                      history.push(`/my-projects/saved`);
+                    }}
+                  >
+                    Projetos Salvos
+                  </Nav.Link>
+                </Nav.Item>
+              </Nav>
 
               {listProjects.length == 0 ? (
                 <MsgEmpty text={"Nenhum resultado encontrado"} />
@@ -161,6 +161,7 @@ function MyProjects({ history }) {
                       title={item.title}
                       description={item.description}
                       createdAt={item.createdAt}
+                      updatedAt={item.updatedAt}
                       idType={item.idType}
                       typeName={item.typeName}
                       cityName={item.cityName}

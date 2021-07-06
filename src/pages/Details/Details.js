@@ -65,7 +65,10 @@ function Details({ history }) {
               </div>
 
               {user.data?.id == project.idUser && (
-                <Dropdown alignRight className="d-flex justify-content-end">
+                <Dropdown
+                  alignRight
+                  className="container-options d-flex justify-content-end"
+                >
                   <Dropdown.Toggle variant="link" className="btn-options">
                     <FontAwesomeIcon color={"#f4f4f4 "} icon={faEllipsisV} />
                   </Dropdown.Toggle>
@@ -86,10 +89,21 @@ function Details({ history }) {
             </Card.Title>
             <div className="d-flex align-items-center mb-3">
               <p className="mb-0 mr-3 project-date">
-                Publicado:{" "}
-                <strong>
-                  {moment(project.createdAt).format("DD/MM/YYYY")}
-                </strong>
+                {project.createdAt == project.updatedAt ? (
+                  <>
+                    Publicado:{" "}
+                    <strong>
+                      {moment(project.createdAt).format("DD/MM/YYYY")}
+                    </strong>
+                  </>
+                ) : (
+                  <>
+                    Editado:{" "}
+                    <strong>
+                      {moment(project.updatedAt).format("DD/MM/YYYY")}
+                    </strong>
+                  </>
+                )}
               </p>
               <div className="project-tag">
                 <p className="mb-0">{project.typeName}</p>

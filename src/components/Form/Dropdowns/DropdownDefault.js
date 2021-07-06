@@ -12,12 +12,13 @@ const DropdownDefault = ({
   options,
   obs,
   errors,
+  customClass,
 }) => {
   var border = "";
   if (errors?.includes(name)) border = "border-danger";
 
   return (
-    <Form.Group>
+    <Form.Group className={customClass}>
       <Form.Label>
         {label} {required && "*"}
       </Form.Label>

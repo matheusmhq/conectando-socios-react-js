@@ -15,7 +15,6 @@ import BannerDefault from "components/Others/BannerDefault";
 
 function Home({ history }) {
   const user = useSelector((state) => state.user);
-
   const [loading, setLoading] = useState(true);
   const [listProjects, setListProjects] = useState([]);
   const [query, setQuery] = useState(UrlParams().get("query") || "");
@@ -79,7 +78,7 @@ function Home({ history }) {
   if (loading) return <Loading customClass="mt-4" />;
   else {
     return (
-      <>
+      <div className="full-height">
         <BannerDefault />
         <Container fluid className="my-5">
           <Row>
@@ -122,6 +121,7 @@ function Home({ history }) {
                       title={item.title}
                       description={item.description}
                       createdAt={item.createdAt}
+                      updatedAt={item.updatedAt}
                       idType={item.idType}
                       typeName={item.typeName}
                       cityName={item.cityName}
@@ -136,7 +136,7 @@ function Home({ history }) {
             </Col>
           </Row>
         </Container>
-      </>
+      </div>
     );
   }
 }
