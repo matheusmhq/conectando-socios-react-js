@@ -23,7 +23,14 @@ export const update = (
     })
     .then((response) => {
       if (response.status == 200) {
-        setProject({ ...project, title, idType, typeName, description });
+        setProject({
+          ...project,
+          title,
+          idType,
+          typeName,
+          description,
+          updatedAt: new Date(),
+        });
         setShowModalEditProject(false);
         alertDispatch("success", response.data.message);
       }
