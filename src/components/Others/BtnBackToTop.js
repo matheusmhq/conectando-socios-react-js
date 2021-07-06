@@ -25,19 +25,19 @@ function BtnBackToTop() {
     });
   };
 
-  if (showBtn) {
-    return (
-      <button
-        title="Voltar ao topo"
-        onClick={() => Back()}
-        className="btn-back-to-top btn-empty"
-      >
-        <FontAwesomeIcon icon={faArrowUp} />
-      </button>
-    );
-  } else {
-    return null;
-  }
+  return (
+    <>
+      {showBtn && (
+        <button
+          title="Voltar ao topo"
+          onClick={() => Back()}
+          className="btn-back-to-top btn-empty"
+        >
+          <FontAwesomeIcon icon={faArrowUp} />
+        </button>
+      )}
+    </>
+  );
 }
 
 export default BtnBackToTop;
