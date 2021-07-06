@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import MenuDefault from "components/Menu/MenuDefault";
 import FooterDefault from "components/Footer/FooterDefault";
 import ScrollToTop from "components/Others/ScrollToTop";
+import BtnBackToTop from "components/Others/BtnBackToTop";
 
 import NotFound from "pages/NotFound/NotFound";
 
@@ -64,6 +65,7 @@ function Routes() {
           <BrowserRouter>
             <AlertBox />
             <ScrollToTop />
+            <BtnBackToTop />
             <main className="main-all">
               <Switch>
                 <RouteWithMenu exact path="/login" component={Login} />

@@ -504,3 +504,26 @@ footer {
 .container-user-doc a:hover {
   color: black;
 }
+
+/* Btn Back To Top */
+.btn-back-to-top {
+  background: var(--brand_blue);
+  position: fixed;
+  z-index: 999;
+  right: 30px;
+  bottom: 40px;
+  color: white;
+  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  box-shadow: 2px 5px 22px -4px rgba(0, 0, 0, 0.74);
+}
+
+@media screen and (max-width: 767px) {
+  .btn-back-to-top {
+    right: 14px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+  }
+}
