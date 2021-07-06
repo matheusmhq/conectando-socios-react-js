@@ -31,7 +31,7 @@ function PublishProject({ history }) {
   if (loading) return <Loading customClass="mt-4" />;
   else {
     return (
-      <Container>
+      <Container fluid>
         <div>
           <div className="bg-white my-5 p-4 container-publish-project">
             <h4 className="title-default ml-0">Publicar um novo projeto</h4>
