@@ -42,7 +42,7 @@ function ChangePassword({ history }) {
             label={"Senha Atual"}
             name={"current"}
             type={"password"}
-            placeholder="Informe a Senha Atual da conta"
+            placeholder="Informe a senha atual da conta"
             required={true}
             onchange={setCurrentPassword}
             value={currentPassword}
@@ -56,7 +56,7 @@ function ChangePassword({ history }) {
             label={"Nova Senha"}
             name={"new"}
             type={"password"}
-            placeholder="Informe a Nova Senha"
+            placeholder="Informe a nova senha"
             required={true}
             onchange={setNewPassword}
             value={newPassword}
@@ -71,7 +71,7 @@ function ChangePassword({ history }) {
             label={"Confirmar a nova "}
             name={"confirm"}
             type={"password"}
-            placeholder="Confirme e Nova Senha"
+            placeholder="Confirme e nova senha"
             required={true}
             onchange={setConfirmPassword}
             value={confirmPassword}
