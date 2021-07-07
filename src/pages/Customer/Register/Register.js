@@ -101,11 +101,8 @@ function Register({ history }) {
     return (
       <div className="main-login d-flex justify-content-center align-items-center">
         <Container fluid>
-          <div
-            className="container-login p-0 py-4 p-md-4"
-            style={{ maxWidth: 1144 }}
-          >
-            <h1 className="mb-5">Faça seu cadastro</h1>
+          <div className="container-login py-4" style={{ maxWidth: 1144 }}>
+            <h1 className="mb-4 mb-md-5">Faça seu cadastro</h1>
 
             <Row className="w-100">
               <Col md={6}>
