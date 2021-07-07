@@ -119,7 +119,7 @@ function MyProjects({ history }) {
               <Nav
                 fill
                 variant="tabs"
-                className="my-projects-tabs mt-4 mt-md-0"
+                className="my-projects-tabs mt-4 mt-md-0 mb-3"
               >
                 <Nav.Item>
                   <Nav.Link
