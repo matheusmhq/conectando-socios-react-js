@@ -533,7 +533,7 @@ footer {
 
 /* Btn Back To Top */
 .btn-back-to-top {
-  background: var(--brand_blue);
+  background-color: var(--brand_blue);
   position: fixed;
   z-index: 999;
   right: 30px;
@@ -551,4 +551,19 @@ footer {
     width: 34px;
     height: 34px;
   }
+}
+
+.last-project-published {
+  background-color: var(--light_blue);
+  height: 41px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.last-project-published p {
+  margin-bottom: 0;
+  font-weight: bold;
+  color: var(--brand_blue);
 }

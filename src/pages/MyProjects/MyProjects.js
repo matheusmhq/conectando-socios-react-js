@@ -104,22 +104,10 @@ function MyProjects({ history }) {
             </Col>
 
             <Col md={9}>
-              <div className="form-control mb-3 mt-3 mt-md-0 d-flex">
-                <input
-                  className="w-100 input-search"
-                  placeholder="Pesquisar"
-                  onChange={(e) => setQuery(e.target.value)}
-                  value={query}
-                />
-                <div>
-                  <FontAwesomeIcon icon={faSearch} />
-                </div>
-              </div>
-
               <Nav
                 fill
                 variant="tabs"
-                className="my-projects-tabs mt-4 mt-md-0 mb-3"
+                className="my-projects-tabs mt-3 mt-md-0"
               >
                 <Nav.Item>
                   <Nav.Link
@@ -146,6 +134,18 @@ function MyProjects({ history }) {
                   </Nav.Link>
                 </Nav.Item>
               </Nav>
+
+              <div className="form-control d-flex mb-3 mt-3 mt-md-3">
+                <input
+                  className="w-100 input-search"
+                  placeholder="Pesquisar"
+                  onChange={(e) => setQuery(e.target.value)}
+                  value={query}
+                />
+                <div>
+                  <FontAwesomeIcon icon={faSearch} />
+                </div>
+              </div>
 
               {listProjects.length == 0 ? (
                 <MsgEmpty text={"Nenhum resultado encontrado"} />

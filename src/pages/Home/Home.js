@@ -95,7 +95,11 @@ function Home({ history }) {
             </Col>
 
             <Col md={9}>
-              <div className="form-control mb-3 d-flex mt-4 mt-md-0">
+              <div className="last-project-published mt-3 mt-md-0">
+                <p>Últimos Projetos</p>
+              </div>
+
+              <div className="form-control d-flex mb-3 mt-3 mt-md-3">
                 <input
                   className="w-100 input-search"
                   placeholder="Pesquisar"
