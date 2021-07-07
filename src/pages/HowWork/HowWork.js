@@ -9,8 +9,8 @@ import logo from "assets/images/logo.png";
 
 function HowWork() {
   return (
-    <Container fluid>
-      <div className="bg-white my-4 p-4 how-work">
+    <Container fluid className="my-4 my-md-5">
+      <div className="bg-white p-4 how-work">
         <Row className="container-how-work">
           <Col md={10}>
             <div className="d-flex mb-4 flex-wrap justify-content-center justify-content-md-start">

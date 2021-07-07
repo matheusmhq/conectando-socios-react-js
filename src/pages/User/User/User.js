@@ -31,7 +31,7 @@ function User({ history }) {
   };
 
   return (
-    <Container fluid className="full-height my-5">
+    <Container fluid className="full-height my-4 my-md-5">
       <Row>
         <Col md={3}>
           <SidebarConfig history={history} sidebar={sidebar} tab={tabLower} />

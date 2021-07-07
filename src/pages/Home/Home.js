@@ -80,7 +80,7 @@ function Home({ history }) {
     return (
       <div className="full-height">
         <BannerDefault />
-        <Container fluid className="my-5">
+        <Container fluid className="my-4 my-md-5">
           <Row>
             <Col md={3}>
               <SidebarDefault

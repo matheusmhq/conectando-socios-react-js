@@ -89,7 +89,7 @@ function MyProjects({ history }) {
   else {
     return (
       <>
-        <Container fluid className="my-5 full-height">
+        <Container fluid className="my-4 my-md-5 full-height">
           <Row>
             <Col md={3}>
               <SidebarDefault

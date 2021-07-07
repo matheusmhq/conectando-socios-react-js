@@ -31,60 +31,57 @@ function PublishProject({ history }) {
   if (loading) return <Loading customClass="mt-4" />;
   else {
     return (
-      <Container fluid>
-        <div>
-          <div className="bg-white my-5 p-4 container-publish-project">
-            <h4 className="title-default ml-0">Publicar um novo projeto</h4>
+      <Container fluid className="my-4 my-md-5">
+        <div className="bg-white p-4 container-publish-project">
+          <h4 className="title-default ml-0">Publicar um novo projeto</h4>
+          <Row>
+            <Col md={8}>
+              <InputDefault
+                label={"Título"}
+                name={"title"}
+                placeholder="Informe o título"
+                required={true}
+                onchange={setTitle}
+                value={title}
+                errors={errors}
+              />
+            </Col>
 
-            <Row>
-              <Col md={8}>
-                <InputDefault
-                  label={"Título"}
-                  name={"title"}
-                  placeholder="Informe o título"
-                  required={true}
-                  onchange={setTitle}
-                  value={title}
-                  errors={errors}
-                />
-              </Col>
+            <Col md={4}>
+              <DropdownDefault
+                label={"Categoria"}
+                name={"type"}
+                required={true}
+                onchange={setIdType}
+                value={idType}
+                options={optionsTypes}
+                errors={errors}
+              />
+            </Col>
 
-              <Col md={4}>
-                <DropdownDefault
-                  label={"Categoria"}
-                  name={"type"}
-                  required={true}
-                  onchange={setIdType}
-                  value={idType}
-                  options={optionsTypes}
-                  errors={errors}
-                />
-              </Col>
+            <Col md={12}>
+              <TextareaDefault
+                rows={10}
+                label={"Descrição"}
+                name={"description"}
+                placeholder="Descreva o projeto com detalhes"
+                required={true}
+                onchange={setDescription}
+                value={description}
+                errors={errors}
+              />
+            </Col>
 
-              <Col md={12}>
-                <TextareaDefault
-                  rows={10}
-                  label={"Descrição"}
-                  name={"description"}
-                  placeholder="Descreva o projeto com detalhes"
-                  required={true}
-                  onchange={setDescription}
-                  value={description}
-                  errors={errors}
-                />
-              </Col>
-
-              <Col md={12}>
-                <BtnDefault
-                  loading={loadingSave}
-                  size={"lg"}
-                  title={"Publicar"}
-                  block={true}
-                  onclick={Save}
-                />
-              </Col>
-            </Row>
-          </div>
+            <Col md={12}>
+              <BtnDefault
+                loading={loadingSave}
+                size={"lg"}
+                title={"Publicar"}
+                block={true}
+                onclick={Save}
+              />
+            </Col>
+          </Row>
         </div>
       </Container>
     );
