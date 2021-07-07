@@ -32,7 +32,7 @@ function CardProject({ history, ...props }) {
     setListProjects,
   } = props;
   return (
-    <Card className="mb-3 card-project ">
+    <Card className="mb-3 card-project">
       <Card.Body>
         <Card.Title className="d-flex justify-content-between">
           <div className="project-container-title">
@@ -69,14 +69,14 @@ function CardProject({ history, ...props }) {
       </Card.Body>
       <Card.Footer className="card-footer d-flex justify-content-between bg-white">
         <div className="d-flex align-items-center">
-          <div className="d-flex align-items-center mr-4">
+          <div className="d-flex align-items-center mr-2 mr-md-4">
             <AvatarDefault
               color={"#007BFF"}
               fgColor={"white"}
               size={26}
               name={name}
             />
-            <p className="mb-0 ml-1">{name}</p>
+            <p className="mb-0 ml-1 limit-line-1 user-name">{name}</p>
           </div>
 
           <div className="d-flex align-items-center">
@@ -117,8 +117,8 @@ function CardProject({ history, ...props }) {
             }}
           >
             <FontAwesomeIcon
+              className="icon-heart"
               color={"red"}
-              size={"lg"}
               icon={projectSaveId ? faHeartSolid : faHeart}
             />
           </button>

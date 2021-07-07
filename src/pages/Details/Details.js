@@ -136,7 +136,9 @@ function Details({ history }) {
                   size={26}
                   name={project.name}
                 />
-                <p className="mb-0 ml-1">{project.name}</p>
+                <p className="mb-0 ml-1 limit-line-1 user-name">
+                  {project.name}
+                </p>
               </div>
 
               <div className="d-flex align-items-center">
@@ -182,10 +184,11 @@ function Details({ history }) {
                     );
                   }
                 }}
+                s
               >
                 <FontAwesomeIcon
                   color={"red"}
-                  size={"lg"}
+                  className="icon-heart"
                   icon={project.projectSaveId ? faHeartSolid : faHeart}
                 />
               </button>

@@ -161,6 +161,12 @@ body {
   cursor: pointer;
 }
 
+@media screen and (max-width: 350px) {
+  .main-logo {
+    width: 120px;
+  }
+}
+
 .dropdown-user .dropdown-toggle::after {
   display: none;
 }
@@ -320,8 +326,16 @@ footer {
   padding: 2px 6px;
 }
 
+.card-project .icon-heart {
+  font-size: 16px;
+}
+
 .card-project .card-footer {
   font-size: 12px;
+}
+
+.card-project .user-name {
+  max-width: 200px;
 }
 
 @media screen and (max-width: 600px) {
@@ -339,6 +353,10 @@ footer {
 
   .card-project .card-footer {
     font-size: 10px;
+  }
+
+  .card-project .user-name {
+    max-width: 100px;
   }
 
   .card-project button {
@@ -530,8 +548,7 @@ footer {
 @media screen and (max-width: 767px) {
   .btn-back-to-top {
     right: 14px;
-    bottom: 10px;
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
   }
 }
