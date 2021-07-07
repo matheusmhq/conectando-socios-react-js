@@ -25,7 +25,7 @@ function NotFound({ history }) {
                 block={true}
                 className="font-weight-bold"
               >
-                Voltar para a Home
+                Voltar
               </Button>
             </div>
           </Col>

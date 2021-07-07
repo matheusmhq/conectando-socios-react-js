@@ -247,7 +247,6 @@ body {
 /* Not Found */
 .main-not-found {
   background-color: var(--light_gray);
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

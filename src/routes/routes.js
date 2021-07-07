@@ -85,7 +85,7 @@ function Routes() {
                 />
                 <PrivateRoute exact path="/user/:tab" component={User} />
 
-                <Route component={NotFound} />
+                <RouteWithMenu component={NotFound} />
               </Switch>
             </main>
           </BrowserRouter>
