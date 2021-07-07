@@ -41,7 +41,7 @@ const DropdownDefault = ({
           })}
       </Form.Control>
 
-      {obs && <p className="small">{obs}</p>}
+      {obs && <p className="small mb-0">{obs}</p>}
 
       {errors?.includes(name) && (
         <p className="text-danger small">Obrigatório</p>
