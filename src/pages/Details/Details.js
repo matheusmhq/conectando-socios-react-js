@@ -39,7 +39,7 @@ function Details({ history }) {
   if (loading) return <Loading customClass="mt-5" />;
   else {
     return (
-      <Container fluid className="full-height">
+      <Container fluid className="full-height my-4 my-md-5">
         {showModalEditProject && (
           <ModalEditProject
             setShowModalEditProject={setShowModalEditProject}
@@ -57,7 +57,7 @@ function Details({ history }) {
           />
         )}
 
-        <Card className="my-5 card-project">
+        <Card className="card-project">
           <Card.Body>
             <Card.Title className="d-flex justify-content-between align-items-start">
               <div className="project-container-title">
