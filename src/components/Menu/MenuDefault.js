@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
 
@@ -11,6 +11,11 @@ function MenuDefault({ history }) {
   const [menuMain, setMenuMain] = useState(pathname);
   const [menuUser, setMenuUser] = useState("");
   const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    setMenuMain(pathname);
+    if (pathname.includes("user")) setMenuUser(pathname);
+  }, [pathname]);
 
   function HandlerMenuMain(page) {
     setExpanded(false);

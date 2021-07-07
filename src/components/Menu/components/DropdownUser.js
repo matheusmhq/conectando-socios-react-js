@@ -51,7 +51,7 @@ const DropdownUser = ({
 
       <NavDropdown.Item
         onClick={() => HandlerMenuUser("/user/profile")}
-        className={menuUser == "/user/profile" && "active"}
+        className={menuUser.includes("user") && "active"}
       >
         <span className="dropdown-user-item">
           <FontAwesomeIcon icon={faCog} />
