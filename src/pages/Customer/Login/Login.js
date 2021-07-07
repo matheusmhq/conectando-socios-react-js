@@ -33,7 +33,7 @@ function Login({ history }) {
   return (
     <div className="main-login d-flex justify-content-center align-items-center">
       <Container fluid>
-        <div className="container-login">
+        <div className="container-login p-0 py-4 p-md-4">
           <h1 className="mb-5">Faça seu login</h1>
 
           <Col md={12}>
