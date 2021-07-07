@@ -55,7 +55,7 @@ const DropdownUser = ({
       >
         <span className="dropdown-user-item">
           <FontAwesomeIcon icon={faCog} />
-          <span>Configuração</span>
+          <span>Configurações</span>
         </span>
       </NavDropdown.Item>
 

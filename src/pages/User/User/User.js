@@ -7,7 +7,7 @@ import Profile from "../Profile/Profile";
 import ChangePassword from "../ChangePassword/ChangePassword";
 
 var sidebar = {
-  title: "Configuração",
+  title: "Configurações",
   options: [
     {
       path: "profile",
