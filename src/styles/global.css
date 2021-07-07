@@ -335,7 +335,7 @@ footer {
 }
 
 .card-project .user-name {
-  max-width: 200px;
+  max-width: 176px;
 }
 
 @media screen and (max-width: 600px) {
