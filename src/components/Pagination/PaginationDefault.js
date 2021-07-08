@@ -10,8 +10,8 @@ import {
 const PaginationDefault = ({
   setPage,
   page,
-  setLimit,
-  limit,
+  setPerPage,
+  perPage,
   totalResults,
   lastPage,
 }) => {
@@ -28,9 +28,9 @@ const PaginationDefault = ({
     return pages;
   };
 
-  const HandlerLimit = (qty) => {
+  const HandlerPerPage = (qty) => {
     setPage(1);
-    setLimit(qty);
+    setPerPage(qty);
   };
 
   return (
@@ -39,11 +39,11 @@ const PaginationDefault = ({
         <div className="container-info-results d-flex flex-column align-items-center align-items-md-start">
           <p className="mb-0 info-pages">Exibindo</p>
           <p className="mb-0 info-results">
-            {limit > totalResults
+            {perPage > totalResults
               ? totalResults
               : page == lastPage
               ? totalResults
-              : limit * page}{" "}
+              : perPage * page}{" "}
             de {totalResults} resultados
           </p>
         </div>
@@ -72,17 +72,16 @@ const PaginationDefault = ({
         className="d-flex justify-content-center  justify-content-md-end"
       >
         <DropdownButton
-          title={`${limit} resultados`}
+          title={`${perPage} resultados`}
           className="btn-qty-results"
-          // variant="secondary"
         >
-          <Dropdown.Item onClick={() => HandlerLimit(10)}>
+          <Dropdown.Item onClick={() => HandlerPerPage(10)}>
             10 resultados
           </Dropdown.Item>
-          <Dropdown.Item onClick={() => HandlerLimit(15)}>
+          <Dropdown.Item onClick={() => HandlerPerPage(15)}>
             15 resultados
           </Dropdown.Item>
-          <Dropdown.Item onClick={() => HandlerLimit(20)}>
+          <Dropdown.Item onClick={() => HandlerPerPage(20)}>
             20 resultados
           </Dropdown.Item>
         </DropdownButton>

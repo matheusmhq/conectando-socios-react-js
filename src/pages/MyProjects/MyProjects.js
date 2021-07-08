@@ -21,7 +21,7 @@ function MyProjects({ history }) {
   const [loading, setLoading] = useState(true);
   const [listProjects, setListProjects] = useState([]);
   const [page, setPage] = useState(UrlParams().get("page") || 1);
-  const [limit, setLimit] = useState(UrlParams().get("limit") || 10);
+  const [perPage, setPerPage] = useState(UrlParams().get("perPage") || 10);
   const [query, setQuery] = useState(UrlParams().get("query") || "");
   const [idType, setIdType] = useState(
     parseInt(UrlParams().get("idType")) || 0
@@ -46,7 +46,7 @@ function MyProjects({ history }) {
 
   useEffect(() => {
     GetProjects();
-  }, [page, limit, user, idType, idState, idCity, tab]);
+  }, [page, perPage, user, idType, idState, idCity, tab]);
 
   const GetProjects = () => {
     var obj = {
@@ -57,8 +57,8 @@ function MyProjects({ history }) {
           value: page,
         },
         {
-          name: "limit",
-          value: limit,
+          name: "perPage",
+          value: perPage,
         },
         {
           name: "query",
@@ -84,7 +84,7 @@ function MyProjects({ history }) {
       tab,
       setListProjects,
       page,
-      limit,
+      perPage,
       setTotalResults,
       setLastPage,
       query,
@@ -197,8 +197,8 @@ function MyProjects({ history }) {
                 <PaginationDefault
                   setPage={setPage}
                   page={page}
-                  setLimit={setLimit}
-                  limit={limit}
+                  setPerPage={setPerPage}
+                  perPage={perPage}
                   totalResults={totalResults}
                   lastPage={lastPage}
                 />

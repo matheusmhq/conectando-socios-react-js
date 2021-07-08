@@ -5,7 +5,7 @@ export const getProjects = (
   tab,
   setListProjects,
   page,
-  limit,
+  perPage,
   setTotalResults,
   setLastPage,
   query,
@@ -21,7 +21,7 @@ export const getProjects = (
     .get(url, {
       params: {
         page,
-        limit,
+        perPage,
         query,
         idType,
         idUser,

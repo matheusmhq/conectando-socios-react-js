@@ -4,7 +4,7 @@ import { alertDispatch } from "store/dispatchs/dispatchs";
 export const getProjects = (
   setListProjects,
   page,
-  limit,
+  perPage,
   setTotalResults,
   setLastPage,
   query,
@@ -18,7 +18,7 @@ export const getProjects = (
     .get(`/projects`, {
       params: {
         page,
-        limit,
+        perPage,
         query,
         idType,
         idUser,
