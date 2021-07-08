@@ -88,7 +88,7 @@ function Profile({ history }) {
   if (loading) return <Loading />;
   else {
     return (
-      <div style={{ borderRadius: 4 }} className="bg-white p-3">
+      <div style={{ borderRadius: 4 }} className="bg-white p-4">
         <Row>
           <Col md={6}>
             <InputDefault

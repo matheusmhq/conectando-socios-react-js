@@ -32,7 +32,7 @@ function PublishProject({ history }) {
   else {
     return (
       <Container fluid className="my-4 my-md-5">
-        <div className="bg-white p-3 container-publish-project">
+        <div className="bg-white p-4 container-publish-project">
           <h4 className="title-default ml-0">Publicar um novo projeto</h4>
           <Row>
             <Col md={8}>

@@ -34,7 +34,7 @@ function ChangePassword({ history }) {
   };
 
   return (
-    <div style={{ borderRadius: 4 }} className="bg-white p-3">
+    <div style={{ borderRadius: 4 }} className="bg-white p-4">
       <Row>
         <Col md={12}>
           <InputDefault
