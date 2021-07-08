@@ -69,7 +69,7 @@ const PaginationDefault = ({
 
       <Col
         md={4}
-        className="d-flex justify-content-center  justify-content-md-end"
+        className="d-flex justify-content-center justify-content-md-end"
       >
         <DropdownButton
           title={`${perPage} resultados`}

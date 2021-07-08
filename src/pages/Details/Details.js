@@ -67,7 +67,7 @@ function Details({ history }) {
               {user.data?.id == project.idUser && (
                 <Dropdown
                   alignRight
-                  className="container-options d-flex justify-content-end"
+                  className="container-options ml-3 d-flex justify-content-end"
                 >
                   <Dropdown.Toggle variant="link" className="btn-options">
                     <FontAwesomeIcon color={"#f4f4f4 "} icon={faEllipsisV} />
