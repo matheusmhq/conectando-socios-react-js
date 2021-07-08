@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Col } from "react-bootstrap";
 
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import { getCity, getState, getTypes } from "functions/requests/request_get";
 
 function SidebarDefault({ history, ...props }) {
-  const { idType, setIdType, idState, setIdState, idCity, setIdCity } = props;
+  const { idType, setIdType, idState, setIdState, idCity, setIdCity, setPage } =
+    props;
 
   const [loading, setLoading] = useState(false);
   const [optionsState, setOptionsState] = useState([]);
@@ -24,6 +25,10 @@ function SidebarDefault({ history, ...props }) {
       setIdCity(0);
     }
   }, [idState]);
+
+  useCallback(() => {
+    setPage(1);
+  }, [idType, idState, idCity]);
 
   return (
     <div className="sidebar-filters w-100">

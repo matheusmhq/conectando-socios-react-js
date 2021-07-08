@@ -12,11 +12,14 @@ import { useDebounce } from "functions/hooks";
 import { UrlParams, SetParamsUrl } from "functions/utils";
 import MsgEmpty from "components/Others/MsgEmpty";
 import BannerDefault from "components/Others/BannerDefault";
+import PaginationDefault from "components/Pagination/PaginationDefault";
 
 function Home({ history }) {
   const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
   const [listProjects, setListProjects] = useState([]);
+  const [page, setPage] = useState(UrlParams().get("page") || 1);
+  const [limit, setLimit] = useState(UrlParams().get("limit") || 10);
   const [query, setQuery] = useState(UrlParams().get("query") || "");
   const [idType, setIdType] = useState(
     parseInt(UrlParams().get("idType")) || 0
@@ -28,6 +31,9 @@ function Home({ history }) {
     parseInt(UrlParams().get("idCity")) || 0
   );
 
+  const [totalResults, setTotalResults] = useState(0);
+  const [lastPage, setLastPage] = useState(0);
+
   useDebounce(
     () => {
       if (!loading) GetProjects();
@@ -38,12 +44,20 @@ function Home({ history }) {
 
   useEffect(() => {
     GetProjects();
-  }, [user, idType, idState, idCity]);
+  }, [page, limit, user, idType, idState, idCity]);
 
   const GetProjects = () => {
     var obj = {
       path: "/",
       params: [
+        {
+          name: "page",
+          value: page,
+        },
+        {
+          name: "limit",
+          value: limit,
+        },
         {
           name: "query",
           value: query,
@@ -66,6 +80,10 @@ function Home({ history }) {
 
     getProjects(
       setListProjects,
+      page,
+      limit,
+      setTotalResults,
+      setLastPage,
       query,
       idType,
       user?.data?.id,
@@ -91,6 +109,7 @@ function Home({ history }) {
                 setIdState={setIdState}
                 idCity={idCity}
                 setIdCity={setIdCity}
+                setPage={setPage}
               />
             </Col>
 
@@ -103,7 +122,10 @@ function Home({ history }) {
                 <input
                   className="w-100 input-search"
                   placeholder="Pesquisar"
-                  onChange={(e) => setQuery(e.target.value)}
+                  onChange={(e) => {
+                    setPage(1);
+                    setQuery(e.target.value);
+                  }}
                   value={query}
                 />
                 <div>
@@ -136,6 +158,16 @@ function Home({ history }) {
                     />
                   );
                 })
+              )}
+              {listProjects.length > 0 && (
+                <PaginationDefault
+                  setPage={setPage}
+                  page={page}
+                  setLimit={setLimit}
+                  limit={limit}
+                  totalResults={totalResults}
+                  lastPage={lastPage}
+                />
               )}
             </Col>
           </Row>

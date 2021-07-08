@@ -12,6 +12,7 @@ import { getProjects } from "./js/api";
 import { useDebounce } from "functions/hooks";
 import { UrlParams, SetParamsUrl } from "functions/utils";
 import MsgEmpty from "components/Others/MsgEmpty";
+import PaginationDefault from "components/Pagination/PaginationDefault";
 
 function MyProjects({ history }) {
   const user = useSelector((state) => state.user);
@@ -19,6 +20,8 @@ function MyProjects({ history }) {
 
   const [loading, setLoading] = useState(true);
   const [listProjects, setListProjects] = useState([]);
+  const [page, setPage] = useState(UrlParams().get("page") || 1);
+  const [limit, setLimit] = useState(UrlParams().get("limit") || 10);
   const [query, setQuery] = useState(UrlParams().get("query") || "");
   const [idType, setIdType] = useState(
     parseInt(UrlParams().get("idType")) || 0
@@ -30,6 +33,9 @@ function MyProjects({ history }) {
     parseInt(UrlParams().get("idCity")) || 0
   );
 
+  const [totalResults, setTotalResults] = useState(0);
+  const [lastPage, setLastPage] = useState(0);
+
   useDebounce(
     () => {
       if (!loading) GetProjects();
@@ -40,12 +46,20 @@ function MyProjects({ history }) {
 
   useEffect(() => {
     GetProjects();
-  }, [user, idType, idState, idCity, tab]);
+  }, [page, limit, user, idType, idState, idCity, tab]);
 
   const GetProjects = () => {
     var obj = {
       path: `/my-projects/${tab}`,
       params: [
+        {
+          name: "page",
+          value: page,
+        },
+        {
+          name: "limit",
+          value: limit,
+        },
         {
           name: "query",
           value: query,
@@ -67,13 +81,17 @@ function MyProjects({ history }) {
     SetParamsUrl(history, obj);
 
     getProjects(
+      tab,
       setListProjects,
+      page,
+      limit,
+      setTotalResults,
+      setLastPage,
       query,
       idType,
       user?.data?.id,
       idState,
       idCity,
-      tab,
       setLoading
     );
   };
@@ -83,6 +101,7 @@ function MyProjects({ history }) {
     setIdState(0);
     setIdCity(0);
     setQuery("");
+    setPage(1);
   }
 
   if (loading) return <Loading customClass="mt-4" />;
@@ -100,6 +119,7 @@ function MyProjects({ history }) {
                 setIdState={setIdState}
                 idCity={idCity}
                 setIdCity={setIdCity}
+                setPage={setPage}
               />
             </Col>
 
@@ -172,6 +192,16 @@ function MyProjects({ history }) {
                     />
                   );
                 })
+              )}
+              {listProjects.length > 0 && (
+                <PaginationDefault
+                  setPage={setPage}
+                  page={page}
+                  setLimit={setLimit}
+                  limit={limit}
+                  totalResults={totalResults}
+                  lastPage={lastPage}
+                />
               )}
             </Col>
           </Row>

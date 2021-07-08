@@ -3,6 +3,10 @@ import { alertDispatch } from "store/dispatchs/dispatchs";
 
 export const getProjects = (
   setListProjects,
+  page,
+  limit,
+  setTotalResults,
+  setLastPage,
   query,
   idType,
   idUser,
@@ -13,6 +17,8 @@ export const getProjects = (
   api
     .get(`/projects`, {
       params: {
+        page,
+        limit,
         query,
         idType,
         idUser,
@@ -24,6 +30,8 @@ export const getProjects = (
     .then((response) => {
       if (response.status == 200) {
         setListProjects(response.data.data);
+        setTotalResults(response.data.totalResults);
+        setLastPage(response.data.lastPage);
       }
     })
     .catch((error) => {

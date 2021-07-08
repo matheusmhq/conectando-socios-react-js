@@ -2,13 +2,17 @@ import api from "services/api";
 import { alertDispatch } from "store/dispatchs/dispatchs";
 
 export const getProjects = (
+  tab,
   setListProjects,
+  page,
+  limit,
+  setTotalResults,
+  setLastPage,
   query,
   idType,
   idUser,
   idState,
   idCity,
-  tab,
   setLoading
 ) => {
   var url = "/projects";
@@ -16,6 +20,8 @@ export const getProjects = (
   api
     .get(url, {
       params: {
+        page,
+        limit,
         query,
         idType,
         idUser,
@@ -27,6 +33,8 @@ export const getProjects = (
     .then((response) => {
       if (response.status == 200) {
         setListProjects(response.data.data);
+        setTotalResults(response.data.totalResults);
+        setLastPage(response.data.lastPage);
       }
     })
     .catch((error) => {
