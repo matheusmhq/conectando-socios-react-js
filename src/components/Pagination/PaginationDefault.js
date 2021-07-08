@@ -34,7 +34,7 @@ const PaginationDefault = ({
   };
 
   return (
-    <Row className="align-items-center mt-4 mt-md-5">
+    <Row className="align-items-center mt-4">
       <Col md={4}>
         <div className="container-info-results d-flex flex-column align-items-center align-items-md-start">
           <p className="mb-0 info-pages">Exibindo</p>
