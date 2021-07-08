@@ -144,7 +144,7 @@ function Profile({ history }) {
           <Col md={4}>
             <DropdownDefault
               label="Cidade"
-              name={"cidade"}
+              name={"city"}
               required={true}
               options={optionsCity}
               onchange={setIdCity}
