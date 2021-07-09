@@ -151,6 +151,7 @@ function Details({ history }) {
 
             {user?.data?.id != project.idUser && (
               <button
+                data-testid="btn-save-project"
                 className="btn-empty"
                 title="Salvar projeto"
                 onClick={() => {

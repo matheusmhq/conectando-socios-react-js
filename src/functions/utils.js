@@ -85,6 +85,5 @@ export function GenerateLinkWhatsapp(number, message) {
   number = number.replace(")", "");
   number = number.replace("-", "");
   number = number.replace(" ", "");
-
   return `https://api.whatsapp.com/send?phone=55${number}&text=${message}`;
 }

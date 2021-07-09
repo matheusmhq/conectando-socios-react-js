@@ -43,6 +43,7 @@ const InputDefault = ({
 
         {mask ? (
           <InputMask
+            data-testid={name}
             maxLength={maxlength}
             onKeyPress={onkeypress}
             required={required}
@@ -59,6 +60,7 @@ const InputDefault = ({
           />
         ) : (
           <input
+            data-testid={name}
             maxLength={maxlength}
             onKeyPress={onkeypress}
             required={required}

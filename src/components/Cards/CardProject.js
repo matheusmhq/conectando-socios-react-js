@@ -89,6 +89,7 @@ function CardProject({ history, ...props }) {
 
         {user?.data?.id != idUser && (
           <button
+            data-testid="btn-save-project"
             className="btn-empty"
             title="Salvar projeto"
             onClick={() => {
