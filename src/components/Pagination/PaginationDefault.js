@@ -7,6 +7,8 @@ import {
   DropdownButton,
 } from "react-bootstrap";
 
+const listPerPage = [10, 15, 20];
+
 const PaginationDefault = ({
   setPage,
   page,
@@ -75,15 +77,13 @@ const PaginationDefault = ({
           title={`${perPage} resultados`}
           className="btn-qty-results"
         >
-          <Dropdown.Item onClick={() => HandlerPerPage(10)}>
-            10 resultados
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => HandlerPerPage(15)}>
-            15 resultados
-          </Dropdown.Item>
-          <Dropdown.Item onClick={() => HandlerPerPage(20)}>
-            20 resultados
-          </Dropdown.Item>
+          {listPerPage.map((item) => {
+            return (
+              <Dropdown.Item onClick={() => HandlerPerPage(item)}>
+                {item} resultados
+              </Dropdown.Item>
+            );
+          })}
         </DropdownButton>
       </Col>
     </Row>
