@@ -77,9 +77,9 @@ const PaginationDefault = ({
           title={`${perPage} resultados`}
           className="btn-qty-results"
         >
-          {listPerPage.map((item) => {
+          {listPerPage.map((item, index) => {
             return (
-              <Dropdown.Item onClick={() => HandlerPerPage(item)}>
+              <Dropdown.Item key={index} onClick={() => HandlerPerPage(item)}>
                 {item} resultados
               </Dropdown.Item>
             );

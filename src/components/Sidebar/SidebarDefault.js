@@ -26,9 +26,20 @@ function SidebarDefault({ history, ...props }) {
     }
   }, [idState]);
 
-  useEffect(() => {
+  const ChangeType = (type) => {
+    setIdType(type);
     setPage(1);
-  }, [idType, idState, idCity]);
+  };
+
+  const ChangeState = (state) => {
+    setIdState(state);
+    setPage(1);
+  };
+
+  const ChangeCity = (city) => {
+    setIdCity(city);
+    setPage(1);
+  };
 
   return (
     <div className="sidebar-filters w-100">
@@ -38,7 +49,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Categoria"}
           name={"type"}
-          onchange={setIdType}
+          onchange={ChangeType}
           value={idType}
           options={optionsTypes}
         />
@@ -48,7 +59,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Estado"}
           name={"state"}
-          onchange={setIdState}
+          onchange={ChangeState}
           value={idState}
           options={optionsState}
         />
@@ -58,7 +69,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Cidade"}
           name={"city"}
-          onchange={setIdCity}
+          onchange={ChangeCity}
           value={idCity}
           options={optionsCity}
           customClass={"mb-0"}

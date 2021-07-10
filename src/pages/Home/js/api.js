@@ -29,6 +29,8 @@ export const getProjects = (
     })
     .then((response) => {
       if (response.status == 200) {
+        console.log("getProjects");
+        console.log(response.data);
         setListProjects(response.data.data);
         setTotalResults(response.data.totalResults);
         setLastPage(response.data.lastPage);
