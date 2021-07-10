@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
@@ -26,7 +26,7 @@ function SidebarDefault({ history, ...props }) {
     }
   }, [idState]);
 
-  useCallback(() => {
+  useEffect(() => {
     setPage(1);
   }, [idType, idState, idCity]);
 
