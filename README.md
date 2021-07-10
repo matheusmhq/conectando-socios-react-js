@@ -46,11 +46,11 @@ As principais bibliotecas usadas nesse projeto:
 
 # Funcionalidades
 
-- [Home (/)](https://conectando-socios.netlify.app/) - Lista os últimos **_projetos_** publicados baseado nos filtros selecionados (Categoria, Estado e Cidade), também permite busca por palavra-chave. Clicando no coração é possível salvar~favoritar um **_projeto_**.
-
+- [Home (/)](https://conectando-socios.netlify.app/) - Lista os últimos **_projetos_** publicados baseado nos filtros selecionados (categoria, estado e cidade), também permite busca por palavra-chave. Clicando no coração é possível salvar~favoritar um **_projeto_**.
+s
 - [Como funciona (/how-work)](https://conectando-socios.netlify.app/how-work) - Uma breve explicação do intuito da plataforma. Disponível um link em .pdf para acesso a **_Documentação do Usuário_**
 
-- [Publicar Projeto (/publish-project)](https://conectando-socios.netlify.app/publish-project) - Permite publicar um projeto preencheendo os campos **_título_**,**_categoria_** e **_descrição_**.
+- [Publicar Projeto (/publish-project)](https://conectando-socios.netlify.app/publish-project) - Permite publicar um projeto preencheendo os campos **_título_**, **_categoria_** e **_descrição_**.
 
 - [Projetos (/details)](https://conectando-socios.netlify.app/details/195) - Exibe informações detalhadas como **_título_**, **_descrição_**, **_categoria_**, **_data da publicação ou edição_** etc... sobre o **_projeto_** escolhido. Também é possível editar ou deletar o **_projeto_** caso seja o autor da publicação.
 
