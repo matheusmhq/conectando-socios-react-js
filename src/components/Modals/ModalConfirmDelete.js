@@ -3,19 +3,19 @@ import { Modal, Row, Col } from "react-bootstrap";
 
 import BtnDefault from "components/Form/Buttons/BtnDefault";
 
-const ModalDeleteProject = ({
-  setShowModalDeleteProject,
-  showModalDeleteProject,
+const ModalConfirmDelete = ({
+  setShowModalConfirmDelete,
+  showModalConfirmDelete,
   title,
   handler,
 }) => {
   const CloseModal = () => {
-    setShowModalDeleteProject(false);
+    setShowModalConfirmDelete(false);
   };
 
   return (
     <Modal
-      show={showModalDeleteProject}
+      show={showModalConfirmDelete}
       size="md"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -44,4 +44,4 @@ const ModalDeleteProject = ({
   );
 };
 
-export default ModalDeleteProject;
+export default ModalConfirmDelete;

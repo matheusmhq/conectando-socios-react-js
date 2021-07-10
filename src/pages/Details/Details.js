@@ -16,7 +16,7 @@ import { saveProject, removeProject } from "functions/requests/request_post";
 import { getProject, deleteProject } from "./js/api";
 import Loading from "components/Loading/Loading";
 import ModalEditProject from "components/Modals/ModalEditProject/ModalEditProject";
-import ModalDeleteProject from "components/Modals/ModalConfirmDelete";
+import ModalConfirmDelete from "components/Modals/ModalConfirmDelete";
 import Social from "components/Others/Social";
 
 function Details({ history }) {
@@ -49,9 +49,9 @@ function Details({ history }) {
           />
         )}
         {showModalDeleteProject && (
-          <ModalDeleteProject
-            setShowModalDeleteProject={setShowModalDeleteProject}
-            showModalDeleteProject={showModalDeleteProject}
+          <ModalConfirmDelete
+            setShowModalConfirmDelete={setShowModalDeleteProject}
+            showModalConfirmDelete={showModalDeleteProject}
             title={"Tem certeza que deseja deletar esse projeto?"}
             handler={DeleteProject}
           />
