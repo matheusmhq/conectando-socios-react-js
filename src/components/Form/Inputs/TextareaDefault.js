@@ -1,7 +1,7 @@
 import React from "react";
 import { Form, InputGroup } from "react-bootstrap";
 
-const InputDefault = ({
+const TextareaDefault = ({
   onchange,
   onblur,
   value,
@@ -64,4 +64,4 @@ const InputDefault = ({
   );
 };
 
-export default InputDefault;
+export default TextareaDefault;
