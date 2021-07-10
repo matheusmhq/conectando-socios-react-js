@@ -1,6 +1,6 @@
 <p  align="center">
 <a href="https://tmdb-movies.netlify.app/">
-		<img src="/src/assets/img/logo.png" alt="Logo TMDB" title="Logo TMDB" />
+		<img src="/src/assets/images/logo.png" alt="Logo TMDB" title="Logo TMDB" />
 	</a>
 </p>
 
@@ -48,7 +48,7 @@ As principais bibliotecas usadas nesse projeto:
 
 # Funcionalidades
 
-- [Home (/)](https://conectando-socios.netlify.app/) - Lista os últimos **_projetos_** publicados baseado nos filtros selecionados (Categoria, Estado e Cidade), também permite busca por palavra-chave. Clicando no coração é possível salvar~favoritar o **_projeto_**.
+- [Home (/)](https://conectando-socios.netlify.app/) - Lista os últimos **_projetos_** publicados baseado nos filtros selecionados (Categoria, Estado e Cidade), também permite busca por palavra-chave. Clicando no coração é possível salvar~favoritar um **_projeto_**.
 
 - [Como funciona (/how-work)](https://conectando-socios.netlify.app/how-work) - Uma breve explicação do intuito da plataforma. Disponível um link em .pdf para acesso a **_Documentação do Usuário_**
 
