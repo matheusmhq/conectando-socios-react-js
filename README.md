@@ -4,8 +4,6 @@
 	</a>
 </p>
 
-<h4 align="center"> Conectando Sócios </h4>
-
 #
 
 <p align="center">
