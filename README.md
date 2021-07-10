@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+<p  align="center">
+<a href="https://tmdb-movies.netlify.app/">
+		<img src="/src/assets/img/logo.png" alt="Logo TMDB" title="Logo TMDB" />
+	</a>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h4 align="center"> Conectando Sócios </h4>
 
-## Available Scripts
+#
 
-In the project directory, you can run:
+<p align="center">
+  Um Sistema totalmente responsivo construído com React JS.
+</p>
 
-### `yarn start`
+<p align="center">
+    <a href="https://github.com/matheusmhq/conectando-socios-react-js/blob/main/LICENSE" alt="license">
+        <img src="https://img.shields.io/github/license/matheusmhq/tmdb-react-js?style=plastic" />
+    </a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<p align="center">
+  <a href="#demo">Demo</a> •
+  <a href="#bibliotecas">Bibliotecas</a> •
+  <a href="#funcionalidades">Funcionalidades</a> •
+  <a href="#iniciando">Iniciando</a>   
+</p>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<!-- <p align="center">
+    <img style="border-radius: 5px" src="src/assets/img/demo.gif" alt="Tmdb React js">
+</p> -->
 
-### `yarn test`
+# Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Conectando Sócios - Live ◀️](https://conectando-socios.netlify.app/)
 
-### `yarn build`
+## Bibliotecas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As principais bibliotecas usadas nesse projeto:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Biblioteca             | Descrição   |
+| :-------------:|--------------|
+| [React](http://facebook.github.io/react/index.html) | Uma biblioteca JavaScript para criar interfaces de usuário. |
+| [Bootstrap](https://react-bootstrap.github.io/) | A biblioteca de front-end mais popular reconstruída para React. |
+| [Router Dom](https://reactrouter.com/) | O React Router Dom é uma lib completa para controle de rotas. |
+| [Axios](https://github.com/axios/axios) | Cliente HTTP baseado em promessa para o navegador e node.js. |
+| [Redux](https://redux.js.org/) | Um gerenciador de estado global para aplicativos JavaScript |
+| [Moment](https://momentjs.com/) | Uma biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas. |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Funcionalidades
 
-### `yarn eject`
+- [Home (/)](https://conectando-socios.netlify.app/) - Lista os últimos **_projetos_** publicados baseado nos filtros selecionados (Categoria, Estado e Cidade), também permite busca por palavra-chave. Clicando no coração é possível salvar~favoritar o **_projeto_**.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Como funciona (/how-work)](https://conectando-socios.netlify.app/how-work) - Uma breve explicação do intuito da plataforma. Disponível um link em .pdf para acesso a **_Documentação do Usuário_**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Publicar Projeto (/publish-project)](https://conectando-socios.netlify.app/publish-project) - Permite publicar um projeto preencheendo os campos **_título_**,**_categoria_** e **_descrição_**.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [Projetos (/details)](https://conectando-socios.netlify.app/details/195) - Exibe informações detalhadas como **_título_**, **_descrição_**, **_categoria_**, **_data da publicação ou edição_** etc... sobre o **_projeto_** escolhido. Também é possível editar ou deletar o **_projeto_** caso seja o autor da publicação.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Meu Projetos (/my-projects)](https://conectando-socios.netlify.app/my-projects/published) - Lista **_projetos_** publicados ou salvos da conta.
 
-## Learn More
+- [Configurações (/user)](https://conectando-socios.netlify.app/user/profile) - Permite editar informações do perfil e alterar a senha.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+- OBS: Todas as páginas que contém listagem estão **_páginadas_**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Iniciando
 
-### Analyzing the Bundle Size
+- Clonar esse repositório
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  ```
+  git clone https://github.com/matheusmhq/conectando-socios-react-js
 
-### Making a Progressive Web App
+  cd conectando-socios-react-js
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Instale as dependências
 
-### Advanced Configuration
+  ```
+  yarn install ou npm install
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Agora é só rodar **yarn start** ou **npm start**
 
-### Deployment
+- A aplicação irá abrir no seguinte endereço `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Bons estudos pra você! 😀😀😀
