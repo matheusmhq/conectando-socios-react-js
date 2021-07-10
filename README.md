@@ -23,9 +23,9 @@
   <a href="#iniciando">Iniciando</a>   
 </p>
 
-<!-- <p align="center">
-    <img style="border-radius: 5px" src="src/assets/img/demo.gif" alt="Tmdb React js">
-</p> -->
+<p align="center">
+    <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="Conetando Sócios React js">
+</p>
 
 # Demo
 
