@@ -4,7 +4,7 @@ import { alertDispatch } from "store/dispatchs/dispatchs";
 import AlertBox from "./AlertBox";
 
 describe("AlertBox", () => {
-  it("should render alert box", async () => {
+  it("should show alert box", async () => {
     render(
       <ReduxProvider>
         <AlertBox />

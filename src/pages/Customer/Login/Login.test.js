@@ -15,7 +15,7 @@ describe("Login", () => {
     expect(screen.getByTestId("password")).toHaveValue("");
   });
 
-  it("should render loading in button sign in", async () => {
+  it("should show loading in button sign in", async () => {
     render(
       <ReduxProvider>
         <Login />

@@ -5,7 +5,7 @@ import BtnDefault from "./BtnDefault";
 import ReduxProvider from "store/ReduxProvider";
 
 describe("BtnDefault", () => {
-  it("should render loading in button save", async () => {
+  it("should show loading in button save", async () => {
     const Wrapper = () => {
       const [loadingSave, setLoadingSave] = useState(false);
       const Save = () => {

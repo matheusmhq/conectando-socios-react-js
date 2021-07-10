@@ -22,7 +22,7 @@ const options = [
 ];
 
 describe("DropdownDefault", () => {
-  it("should render text required", async () => {
+  it("should show text required", async () => {
     const Wrapper = () => {
       const [errors, setErrors] = useState("");
       const Save = () => {

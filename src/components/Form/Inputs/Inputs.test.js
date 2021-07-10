@@ -8,7 +8,7 @@ import BtnDefault from "../Buttons/BtnDefault";
 import TextareaDefault from "./TextareaDefault";
 
 describe("InputDefault", () => {
-  it("should render text required", async () => {
+  it("should show text required", async () => {
     const Wrapper = () => {
       const [errors, setErrors] = useState("");
       const Save = () => {
@@ -30,7 +30,7 @@ describe("InputDefault", () => {
 });
 
 describe("TextareaDefault", () => {
-  it("should render text required", async () => {
+  it("should show text required", async () => {
     const Wrapper = () => {
       const [errors, setErrors] = useState("");
       const Save = () => {
