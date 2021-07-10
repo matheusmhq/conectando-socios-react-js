@@ -52,9 +52,9 @@ As principais bibliotecas usadas nesse projeto:
 
 - [Publicar Projeto (/publish-project)](https://conectando-socios.netlify.app/publish-project) - Permite publicar um projeto preencheendo os campos **_título_**, **_categoria_** e **_descrição_**.
 
-- [Detalhes (/details)](https://conectando-socios.netlify.app/details/195) - Exibe informações detalhadas como **_título_**, **_descrição_**, **_categoria_**, **_data da publicação ou edição_** etc... sobre o **_projeto_** escolhido. Também é possível editar ou deletar o **_projeto_** caso seja o autor da publicação.
+- [Detalhes (/details)](https://conectando-socios.netlify.app/details/195) - Exibe informações detalhadas como **_título_**, **_descrição_**, **_categoria_**, **_links das redes do autor da publicação_** etc... sobre o **_projeto_** escolhido. Também é possível editar ou deletar o **_projeto_** caso seja o autor da publicação.
 
-- [Meu Projetos (/my-projects)](https://conectando-socios.netlify.app/my-projects/published) - Lista **_projetos_** publicados ou salvos da conta.
+- [Meus Projetos (/my-projects)](https://conectando-socios.netlify.app/my-projects/published) - Lista **_projetos_** publicados ou salvos da conta.
 
 - [Configurações (/user)](https://conectando-socios.netlify.app/user/profile) - Permite editar informações do perfil e alterar a senha.
 
