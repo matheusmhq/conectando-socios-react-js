@@ -6,6 +6,7 @@ describe("Login", () => {
     cy.get("[data-testid=password]").type("12345678");
     cy.get("button[data-testid=btn-sign-in]").click();
 
+    //expected
     cy.url().should("eq", `${Cypress.config().baseUrl}/?page=1&perPage=10`);
   });
 
@@ -14,6 +15,20 @@ describe("Login", () => {
 
     cy.get("a[data-testid=btn-register]").click();
     cy.url().should("eq", `${Cypress.config().baseUrl}/register`);
+  });
+
+  it("should show alert with message invalid credentials", () => {
+    cy.visit("/login");
+
+    cy.get("[data-testid=email]").type("invalidtest@hotmail.com");
+    cy.get("[data-testid=password]").type("1");
+    cy.get("button[data-testid=btn-sign-in]").click();
+
+    //expected
+    cy.get(".Toastify__toast-body").should(
+      "have.text",
+      "E-mail ou senha inválidos"
+    );
   });
 
   it("should show alert with message invalid email", () => {
