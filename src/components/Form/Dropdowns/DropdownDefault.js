@@ -23,6 +23,7 @@ const DropdownDefault = ({
         {label} {required && "*"}
       </Form.Label>
       <Form.Control
+        data-testid={name}
         required={required}
         name={name}
         value={value}

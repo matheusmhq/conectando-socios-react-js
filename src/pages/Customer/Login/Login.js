@@ -64,6 +64,7 @@ function Login({ history }) {
           </Col>
 
           <a
+            data-testid="btn-register"
             onClick={() => history.push("/register")}
             className="my-4 d-block btn-register"
           >
@@ -72,6 +73,7 @@ function Login({ history }) {
 
           <Col md={12}>
             <BtnDefault
+              testid="btn-sign-in"
               loading={loadingSave}
               size={"lg"}
               title={"Entrar"}

@@ -12,9 +12,11 @@ const BtnDefault = ({
   loadingColor,
   variant,
   block,
+  testid,
 }) => {
   return (
     <Button
+      data-testid={testid || ""}
       className={customClass}
       block={block}
       disabled={disabled}

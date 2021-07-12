@@ -301,6 +301,7 @@ function Register({ history }) {
 
               <Col md={12}>
                 <BtnDefault
+                  testid="btn-register"
                   customClass={"mt-4"}
                   loading={loadingSave}
                   size={"lg"}
