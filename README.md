@@ -41,8 +41,11 @@ As principais bibliotecas usadas nesse projeto:
 | [Bootstrap](https://react-bootstrap.github.io/) | A biblioteca de front-end mais popular reconstruída para React. |
 | [Router Dom](https://reactrouter.com/) | O React Router Dom é uma lib completa para controle de rotas. |
 | [Axios](https://github.com/axios/axios) | Cliente HTTP baseado em promessa para o navegador e node.js. |
-| [Redux](https://redux.js.org/) | Um gerenciador de estado global para aplicativos JavaScript |
+| [Redux](https://redux.js.org/) | Um gerenciador de estado global para aplicativos JavaScript. |
 | [Moment](https://momentjs.com/) | Uma biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas. |
+| [Cypress](https://docs.cypress.io/) | Cypress é uma ferramenta de teste de front-end de próxima geração desenvolvida para a web moderna. |
+| [Jest](https://jestjs.io/) | Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade. |
+| [React Testing Library](https://testing-library.com/) | Utilitários de teste simples e completos que incentivam boas práticas de teste. |
 
 # Funcionalidades
 
