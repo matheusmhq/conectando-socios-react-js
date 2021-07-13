@@ -30,7 +30,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "cypress-run": "cypress run",
+    "cypress": "cypress run",
     "cypress-chrome": "cypress run -b chrome",
     "cypress-open": "cypress open",
     "start": "env-cmd -f .env.development react-scripts start",
