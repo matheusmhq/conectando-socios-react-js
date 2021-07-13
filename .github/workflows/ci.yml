@@ -5,6 +5,17 @@ on:
   pull_request:
 
 jobs:
+  jest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - run: npm install
+      - run: npm run start &
+      - name: Run tests
+        run: yarn test
   cypress:
     runs-on: ubuntu-latest
     steps:
