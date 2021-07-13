@@ -39,4 +39,22 @@ describe("Login", () => {
     //expected
     cy.get(".Toastify__toast-body").should("have.text", "E-mail inválido");
   });
+
+  it("should render message required", () => {
+    cy.visit("/login");
+
+    //add email and click
+    cy.get("[data-testid=email]").type(`test@hotmail.com`);
+    cy.get("button[data-testid=btn-sign-in]").click();
+
+    //expected 1 required only
+    cy.get("p[data-testid=text-required]").should("have.length", 1);
+
+    //add password and click again
+    cy.get("[data-testid=password]").type("1");
+    cy.get("button[data-testid=btn-sign-in]").click();
+
+    //expected 0 required
+    cy.get("p[data-testid=text-required]").should("have.length", 0);
+  });
 });

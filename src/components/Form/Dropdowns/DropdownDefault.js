@@ -45,7 +45,9 @@ const DropdownDefault = ({
       {obs && <p className="small mb-0">{obs}</p>}
 
       {errors?.includes(name) && (
-        <p className="text-danger small">Obrigatório</p>
+        <p data-testid="text-required" className="text-danger small">
+          Obrigatório
+        </p>
       )}
     </Form.Group>
   );
