@@ -45,7 +45,7 @@ As principais bibliotecas usadas nesse projeto:
 | [Moment](https://momentjs.com/) | Uma biblioteca de datas JavaScript para analisar, validar, manipular e formatar datas. |
 | [Cypress](https://docs.cypress.io/) | Cypress é uma ferramenta de teste de front-end de próxima geração desenvolvida para a web moderna. |
 | [Jest](https://jestjs.io/) | Jest é um poderoso Framework de Testes em JavaScript com um foco na simplicidade. |
-| [React Testing Library](https://testing-library.com/) | Utilitários de teste simples e completos que incentivam boas práticas de teste. |
+| [Testing Library](https://testing-library.com/) | Utilitários de teste simples e completos que incentivam boas práticas de teste. |
 
 # Funcionalidades
 
