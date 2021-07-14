@@ -24,7 +24,7 @@
 </p>
 
 <p align="center">
-    <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="Conetando Sócios React js">
+    <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="Conectando Sócios React js">
 </p>
 
 # Demo
