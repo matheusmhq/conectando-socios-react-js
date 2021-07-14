@@ -1,6 +1,6 @@
 <p  align="center">
 <a href="https://conectando-socios.netlify.app/">
-		<img src="/src/assets/images/logo.png" alt="Logo TMDB" title="Logo TMDB" />
+		<img src="/src/assets/images/logo.png" alt="Logo Conectando Sócios" title="Logo Conectando Sócios" />
 	</a>
 </p>
 
