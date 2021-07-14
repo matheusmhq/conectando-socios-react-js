@@ -7,10 +7,10 @@ describe("Login", () => {
 
     cy.get("[data-testid=email]").type("test@hotmail.com");
     cy.get("[data-testid=password]").type("12345678");
-    //cy.get("button[data-testid=btn-sign-in]").click(); // descomment after
+    cy.get("button[data-testid=btn-sign-in]").click();
 
     //expected
-    //cy.url().should("eq", `${Cypress.config().baseUrl}/?page=1&perPage=10`); //descomment after
+    cy.url().should("eq", `${Cypress.config().baseUrl}/?page=1&perPage=10`);
   });
 
   it("should redirect to register page", () => {
