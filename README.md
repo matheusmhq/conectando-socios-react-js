@@ -1,5 +1,5 @@
 <p  align="center">
-<a href="https://tmdb-movies.netlify.app/">
+<a href="https://conectando-socios.netlify.app/">
 		<img src="/src/assets/images/logo.png" alt="Logo TMDB" title="Logo TMDB" />
 	</a>
 </p>
