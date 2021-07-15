@@ -1,4 +1,4 @@
-name: ci
+name: tests
 
 on:
   push:
@@ -14,8 +14,10 @@ jobs:
           fetch-depth: 0
       - run: npm install
       - run: npm run start &
-      - name: Run tests
-        run: yarn test
+      - name: Run Jest
+        uses: stefanoeb/jest-action@1.0.3
+        with:
+          changes-only: true
   cypress:
     runs-on: ubuntu-latest
     steps:
