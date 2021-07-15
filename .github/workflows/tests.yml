@@ -15,7 +15,7 @@ jobs:
       - run: npm install
       - run: npm run start &
       - name: Run Jest
-        uses: stefanoeb/jest-action@1.0.3
+        run: yarn test
   cypress:
     runs-on: ubuntu-latest
     steps:
