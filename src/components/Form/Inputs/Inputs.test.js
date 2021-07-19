@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ReduxProvider from "store/ReduxProvider";
 import { validationFields } from "functions/validation";
 import InputDefault from "./InputDefault";
 import BtnDefault from "../Buttons/BtnDefault";
@@ -16,10 +15,10 @@ describe("InputDefault", () => {
       };
 
       return (
-        <ReduxProvider>
+        <>
           <InputDefault name="name" required={true} errors={errors} />
           <BtnDefault title={"Salvar"} onclick={Save} />
-        </ReduxProvider>
+        </>
       );
     };
     render(<Wrapper />);
@@ -38,10 +37,10 @@ describe("TextareaDefault", () => {
       };
 
       return (
-        <ReduxProvider>
+        <>
           <TextareaDefault name="description" required={true} errors={errors} />
           <BtnDefault title={"Salvar"} onclick={Save} />
-        </ReduxProvider>
+        </>
       );
     };
     render(<Wrapper />);

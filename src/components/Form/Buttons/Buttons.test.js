@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import BtnDefault from "./BtnDefault";
-import ReduxProvider from "store/ReduxProvider";
 
 describe("BtnDefault", () => {
   it("should show loading in button save", async () => {
@@ -13,9 +12,7 @@ describe("BtnDefault", () => {
       };
 
       return (
-        <ReduxProvider>
-          <BtnDefault title={"Salvar"} loading={loadingSave} onclick={Save} />
-        </ReduxProvider>
+        <BtnDefault title={"Salvar"} loading={loadingSave} onclick={Save} />
       );
     };
     render(<Wrapper />);

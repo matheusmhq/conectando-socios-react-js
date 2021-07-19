@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import ReduxProvider from "store/ReduxProvider";
 import { validationFields } from "functions/validation";
 import DropdownDefault from "./DropdownDefault";
 import BtnDefault from "../Buttons/BtnDefault";
@@ -30,10 +29,10 @@ describe("DropdownDefault", () => {
       };
 
       return (
-        <ReduxProvider>
+        <>
           <DropdownDefault name="type" required={true} errors={errors} />
           <BtnDefault title={"Salvar"} onclick={Save} />
-        </ReduxProvider>
+        </>
       );
     };
     render(<Wrapper />);
@@ -44,10 +43,13 @@ describe("DropdownDefault", () => {
 
   it("should render options", async () => {
     render(
-      <ReduxProvider>
+      <>
         <DropdownDefault options={options} name="type" />
-      </ReduxProvider>
+      </>
     );
-    screen.getByText("Automóveis");
+
+    options.map((item) => {
+      screen.getByText(item.name);
+    });
   });
 });
