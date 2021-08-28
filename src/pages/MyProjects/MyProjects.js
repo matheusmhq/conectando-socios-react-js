@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Container, Col, Row, Button, Nav } from "react-bootstrap";
+import { Container, Col, Row, Nav } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,7 +10,7 @@ import SidebarDefault from "components/Sidebar/SidebarDefault";
 import CardProject from "components/Cards/CardProject";
 import { getProjects } from "./js/api";
 import { useDebounce } from "functions/hooks";
-import { UrlParams, SetParamsUrl } from "functions/utils";
+import { SetParamsUrl, GeUrlParameter } from "functions/utils";
 import MsgEmpty from "components/Others/MsgEmpty";
 import PaginationDefault from "components/Pagination/PaginationDefault";
 
@@ -20,18 +20,12 @@ function MyProjects({ history }) {
 
   const [loading, setLoading] = useState(true);
   const [listProjects, setListProjects] = useState([]);
-  const [page, setPage] = useState(UrlParams().get("page") || 1);
-  const [perPage, setPerPage] = useState(UrlParams().get("perPage") || 10);
-  const [query, setQuery] = useState(UrlParams().get("query") || "");
-  const [idType, setIdType] = useState(
-    parseInt(UrlParams().get("idType")) || 0
-  );
-  const [idState, setIdState] = useState(
-    parseInt(UrlParams().get("idState")) || 0
-  );
-  const [idCity, setIdCity] = useState(
-    parseInt(UrlParams().get("idCity")) || 0
-  );
+  const [page, setPage] = useState(GeUrlParameter("page", 1));
+  const [perPage, setPerPage] = useState(GeUrlParameter("perPage", 10));
+  const [query, setQuery] = useState(GeUrlParameter("query", ""));
+  const [idType, setIdType] = useState(GeUrlParameter("idType", 0));
+  const [idState, setIdState] = useState(GeUrlParameter("idState", 0));
+  const [idCity, setIdCity] = useState(GeUrlParameter("idCity", 0));
 
   const [totalResults, setTotalResults] = useState(0);
   const [lastPage, setLastPage] = useState(0);
