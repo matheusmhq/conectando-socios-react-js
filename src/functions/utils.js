@@ -88,7 +88,6 @@ export function GenerateLinkWhatsapp(number, message) {
   return `https://api.whatsapp.com/send?phone=55${number}&text=${message}`;
 }
 
-export function GeUrlParameter(name, defaultValue) {
-  var parameter = UrlParams().get(name) || defaultValue;
-  return parameter;
+export function GetUrlParameter(name, defaultValue) {
+  return UrlParams().get(name) || defaultValue;
 }
