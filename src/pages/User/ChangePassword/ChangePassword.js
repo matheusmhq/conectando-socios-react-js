@@ -44,7 +44,7 @@ function ChangePassword({ history }) {
             type={"password"}
             placeholder="Informe a senha atual da conta"
             required={true}
-            onchange={setCurrentPassword}
+            onChange={setCurrentPassword}
             value={currentPassword}
             errors={errors}
           />
@@ -58,7 +58,7 @@ function ChangePassword({ history }) {
             type={"password"}
             placeholder="Informe a nova senha"
             required={true}
-            onchange={setNewPassword}
+            onChange={setNewPassword}
             value={newPassword}
             errors={errors}
             obs={"No mínimo 8 caracteres"}
@@ -73,7 +73,7 @@ function ChangePassword({ history }) {
             type={"password"}
             placeholder="Confirme e nova senha"
             required={true}
-            onchange={setConfirmPassword}
+            onChange={setConfirmPassword}
             value={confirmPassword}
             errors={errors}
           />
@@ -86,7 +86,7 @@ function ChangePassword({ history }) {
             size={"lg"}
             title={"Salvar"}
             block={true}
-            onclick={Update}
+            onClick={Update}
           />
         </Col>
       </Row>

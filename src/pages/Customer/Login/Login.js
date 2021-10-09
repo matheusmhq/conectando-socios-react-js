@@ -42,8 +42,8 @@ function Login({ history }) {
               name={"email"}
               placeholder="Informe o e-mail"
               required={true}
-              onblur={ValidateEmailLocal}
-              onchange={setEmail}
+              onBlur={ValidateEmailLocal}
+              onChange={setEmail}
               value={email}
               errors={errors}
             />
@@ -56,7 +56,7 @@ function Login({ history }) {
               placeholder="Informe a senha"
               required={true}
               type="password"
-              onchange={setPassword}
+              onChange={setPassword}
               value={password}
               errors={errors}
               onkeypress={(e) => EnterPressed(e, SignIn)}
@@ -78,7 +78,7 @@ function Login({ history }) {
               size={"lg"}
               title={"Entrar"}
               block={true}
-              onclick={SignIn}
+              onClick={SignIn}
             />
           </Col>
         </div>

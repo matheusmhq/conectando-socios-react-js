@@ -2,7 +2,7 @@ import React from "react";
 import { Form } from "react-bootstrap";
 
 const DropdownDefault = ({
-  onchange,
+  onChange,
   label,
   name,
   value,
@@ -27,7 +27,7 @@ const DropdownDefault = ({
         required={required}
         name={name}
         value={value}
-        onChange={(e) => onchange(e.target.value)}
+        onChange={(e) => onChange(e.target.value)}
         as="select"
         className={`validation-here ${border}`}
       >

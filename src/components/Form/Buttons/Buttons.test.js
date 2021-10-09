@@ -12,7 +12,7 @@ describe("BtnDefault", () => {
       };
 
       return (
-        <BtnDefault title={"Salvar"} loading={loadingSave} onclick={Save} />
+        <BtnDefault title={"Salvar"} loading={loadingSave} onClick={Save} />
       );
     };
     render(<Wrapper />);

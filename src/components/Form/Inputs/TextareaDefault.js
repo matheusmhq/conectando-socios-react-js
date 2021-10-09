@@ -2,8 +2,8 @@ import React from "react";
 import { Form, InputGroup } from "react-bootstrap";
 
 const TextareaDefault = ({
-  onchange,
-  onblur,
+  onChange,
+  onBlur,
   value,
   label,
   name,
@@ -44,9 +44,9 @@ const TextareaDefault = ({
           cols={cols}
           plaintext={plaintext}
           readOnly={readOnly}
-          onChange={(e) => onchange(e.target.value)}
+          onChange={(e) => onChange(e.target.value)}
           onBlur={(e) => {
-            if (onblur !== undefined) onblur();
+            if (onBlur !== undefined) onBlur();
           }}
           value={value}
           type={type}

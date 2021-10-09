@@ -76,7 +76,7 @@ const ModalEditProject = ({
                   name={"title"}
                   placeholder="Informe o título"
                   required={true}
-                  onchange={setTitle}
+                  onChange={setTitle}
                   value={title}
                   errors={errors}
                 />
@@ -87,7 +87,7 @@ const ModalEditProject = ({
                   label={"Categoria"}
                   name={"type"}
                   required={true}
-                  onchange={setIdType}
+                  onChange={setIdType}
                   value={idType}
                   options={optionsTypes}
                   errors={errors}
@@ -101,7 +101,7 @@ const ModalEditProject = ({
                   name={"description"}
                   placeholder="Descreva o projeto com detalhes"
                   required={true}
-                  onchange={setDescription}
+                  onChange={setDescription}
                   value={description}
                   errors={errors}
                 />
@@ -117,7 +117,7 @@ const ModalEditProject = ({
               variant="outline-secondary"
               title={"Cancelar"}
               block={true}
-              onclick={CloseModal}
+              onClick={CloseModal}
             />
           </Col>
 
@@ -126,7 +126,7 @@ const ModalEditProject = ({
               loading={loadingSave}
               title={"Salvar"}
               block={true}
-              onclick={Update}
+              onClick={Update}
             />
           </Col>
         </Row>

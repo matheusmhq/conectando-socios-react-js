@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Spinner } from "react-bootstrap";
 
 const BtnDefault = ({
-  onclick,
+  onClick,
   title,
   disabled,
   customStyles,
@@ -23,7 +23,7 @@ const BtnDefault = ({
       style={customStyles}
       variant={variant == undefined ? "primary" : variant}
       size={size}
-      onClick={() => onclick()}
+      onClick={() => onClick()}
     >
       {!loading ? (
         title

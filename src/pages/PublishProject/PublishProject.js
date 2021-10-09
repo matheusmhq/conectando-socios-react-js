@@ -41,7 +41,7 @@ function PublishProject({ history }) {
                 name={"title"}
                 placeholder="Informe o título"
                 required={true}
-                onchange={setTitle}
+                onChange={setTitle}
                 value={title}
                 errors={errors}
               />
@@ -52,7 +52,7 @@ function PublishProject({ history }) {
                 label={"Categoria"}
                 name={"type"}
                 required={true}
-                onchange={setIdType}
+                onChange={setIdType}
                 value={idType}
                 options={optionsTypes}
                 errors={errors}
@@ -66,7 +66,7 @@ function PublishProject({ history }) {
                 name={"description"}
                 placeholder="Descreva o projeto com detalhes"
                 required={true}
-                onchange={setDescription}
+                onChange={setDescription}
                 value={description}
                 errors={errors}
               />
@@ -78,7 +78,7 @@ function PublishProject({ history }) {
                 size={"lg"}
                 title={"Publicar"}
                 block={true}
-                onclick={Save}
+                onClick={Save}
               />
             </Col>
           </Row>

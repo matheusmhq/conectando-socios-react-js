@@ -96,7 +96,7 @@ function Profile({ history }) {
               name={"name"}
               placeholder="Informe o nome completo"
               required={true}
-              onchange={setName}
+              onChange={setName}
               value={name}
               errors={errors}
             />
@@ -109,9 +109,9 @@ function Profile({ history }) {
               name={"email"}
               placeholder="Informe o e-mail"
               required={true}
-              onchange={setEmail}
+              onChange={setEmail}
               value={email}
-              onblur={VerifyEmailLocal}
+              onBlur={VerifyEmailLocal}
               errors={errors}
             />
           </Col>
@@ -122,9 +122,9 @@ function Profile({ history }) {
               label={"Cep"}
               name={"cep"}
               required={true}
-              onchange={setCep}
+              onChange={setCep}
               value={cep}
-              onblur={LoadAddress}
+              onBlur={LoadAddress}
               errors={errors}
             />
           </Col>
@@ -135,7 +135,7 @@ function Profile({ history }) {
               name={"uf"}
               required={true}
               options={optionsState}
-              onchange={setIdState}
+              onChange={setIdState}
               value={idState}
               errors={errors}
             />
@@ -147,7 +147,7 @@ function Profile({ history }) {
               name={"city"}
               required={true}
               options={optionsCity}
-              onchange={setIdCity}
+              onChange={setIdCity}
               value={idCity}
               errors={errors}
             />
@@ -159,7 +159,7 @@ function Profile({ history }) {
               name={"address"}
               placeholder="Informe o logradouro"
               required={true}
-              onchange={setAddress}
+              onChange={setAddress}
               value={address}
               errors={errors}
             />
@@ -171,7 +171,7 @@ function Profile({ history }) {
               name={"number"}
               placeholder="Informe o número"
               required={true}
-              onchange={setNumber}
+              onChange={setNumber}
               value={number}
               errors={errors}
             />
@@ -183,7 +183,7 @@ function Profile({ history }) {
               name={"district"}
               placeholder="Informe o bairro"
               required={true}
-              onchange={setDisctric}
+              onChange={setDisctric}
               value={district}
               errors={errors}
             />
@@ -194,7 +194,7 @@ function Profile({ history }) {
               label={"Complemento"}
               name={"complement"}
               placeholder="Informe o complemento"
-              onchange={setComplement}
+              onChange={setComplement}
               value={complement}
               errors={errors}
             />
@@ -206,7 +206,7 @@ function Profile({ history }) {
               label={"Whatsapp"}
               name={"whatsapp"}
               required={true}
-              onchange={setWhatsapp}
+              onChange={setWhatsapp}
               value={whatsapp}
               errors={errors}
             />
@@ -217,7 +217,7 @@ function Profile({ history }) {
               label={"Facebook"}
               name={"facebook"}
               placeholder="Informe a URL"
-              onchange={setFacebook}
+              onChange={setFacebook}
               value={facebook}
               errors={errors}
             />
@@ -228,7 +228,7 @@ function Profile({ history }) {
               label={"Linkedin"}
               name={"linkedin"}
               placeholder="Informe a URL"
-              onchange={setLinkedin}
+              onChange={setLinkedin}
               value={linkedin}
               errors={errors}
             />
@@ -239,7 +239,7 @@ function Profile({ history }) {
               label={"Twitter"}
               name={"twitter"}
               placeholder="Informe a URL"
-              onchange={setTwitter}
+              onChange={setTwitter}
               value={twitter}
               errors={errors}
             />
@@ -250,7 +250,7 @@ function Profile({ history }) {
               label={"Instagram"}
               name={"instagram"}
               placeholder="Informe a URL"
-              onchange={setInstagram}
+              onChange={setInstagram}
               value={instagram}
               errors={errors}
             />
@@ -263,7 +263,7 @@ function Profile({ history }) {
               size={"lg"}
               title={"Salvar"}
               block={true}
-              onclick={Update}
+              onClick={Update}
             />
           </Col>
         </Row>

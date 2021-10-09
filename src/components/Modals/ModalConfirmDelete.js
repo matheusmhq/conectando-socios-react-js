@@ -31,12 +31,12 @@ const ModalConfirmDelete = ({
               variant="outline-secondary"
               title={"Cancelar"}
               block={true}
-              onclick={CloseModal}
+              onClick={CloseModal}
             />
           </Col>
 
           <Col xs={6}>
-            <BtnDefault title={"Continuar"} block={true} onclick={handler} />
+            <BtnDefault title={"Continuar"} block={true} onClick={handler} />
           </Col>
         </Row>
       </Modal.Footer>

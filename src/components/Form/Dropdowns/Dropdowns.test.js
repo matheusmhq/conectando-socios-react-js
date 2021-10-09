@@ -31,7 +31,7 @@ describe("DropdownDefault", () => {
       return (
         <>
           <DropdownDefault name="type" required={true} errors={errors} />
-          <BtnDefault title={"Salvar"} onclick={Save} />
+          <BtnDefault title={"Salvar"} onClick={Save} />
         </>
       );
     };

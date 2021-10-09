@@ -56,7 +56,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Categoria"}
           name={"type"}
-          onchange={ChangeType}
+          onChange={ChangeType}
           value={idType}
           options={optionsTypes}
         />
@@ -66,7 +66,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Estado"}
           name={"state"}
-          onchange={ChangeState}
+          onChange={ChangeState}
           value={idState}
           options={optionsState}
         />
@@ -76,7 +76,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Cidade"}
           name={"city"}
-          onchange={ChangeCity}
+          onChange={ChangeCity}
           value={idCity}
           options={optionsCity}
           customClass={"mb-0"}
@@ -89,7 +89,7 @@ function SidebarDefault({ history, ...props }) {
           size={"md"}
           title={"Limpar"}
           block={true}
-          onclick={ClearFields}
+          onClick={ClearFields}
         />
       </Col>
     </div>

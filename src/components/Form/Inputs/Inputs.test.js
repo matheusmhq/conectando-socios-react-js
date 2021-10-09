@@ -17,7 +17,7 @@ describe("InputDefault", () => {
       return (
         <>
           <InputDefault name="name" required={true} errors={errors} />
-          <BtnDefault title={"Salvar"} onclick={Save} />
+          <BtnDefault title={"Salvar"} onClick={Save} />
         </>
       );
     };
@@ -39,7 +39,7 @@ describe("TextareaDefault", () => {
       return (
         <>
           <TextareaDefault name="description" required={true} errors={errors} />
-          <BtnDefault title={"Salvar"} onclick={Save} />
+          <BtnDefault title={"Salvar"} onClick={Save} />
         </>
       );
     };

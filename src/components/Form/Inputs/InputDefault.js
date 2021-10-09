@@ -3,8 +3,8 @@ import { Form, InputGroup } from "react-bootstrap";
 import InputMask from "react-input-mask";
 
 const InputDefault = ({
-  onchange,
-  onblur,
+  onChange,
+  onBlur,
   value,
   label,
   name,
@@ -21,7 +21,7 @@ const InputDefault = ({
   obs,
   errors,
   onkeypress,
-  maxlength,
+  maxLength,
 }) => {
   var border = "";
   var form_c = "form-control";
@@ -44,14 +44,14 @@ const InputDefault = ({
         {mask ? (
           <InputMask
             data-testid={name}
-            maxLength={maxlength}
+            maxLength={maxLength}
             onKeyPress={onkeypress}
             required={required}
             name={name}
             mask={mask}
-            onChange={(e) => onchange(e.target.value)}
+            onChange={(e) => onChange(e.target.value)}
             onBlur={(e) => {
-              if (onblur !== undefined) onblur();
+              if (onBlur !== undefined) onBlur();
             }}
             disabled={readOnly}
             value={value}
@@ -61,15 +61,15 @@ const InputDefault = ({
         ) : (
           <input
             data-testid={name}
-            maxLength={maxlength}
+            maxLength={maxLength}
             onKeyPress={onkeypress}
             required={required}
             name={name}
             plaintext={plaintext}
             readOnly={readOnly}
-            onChange={(e) => onchange(type != "file" ? e.target.value : e)}
+            onChange={(e) => onChange(type != "file" ? e.target.value : e)}
             onBlur={(e) => {
-              if (onblur !== undefined) onblur();
+              if (onBlur !== undefined) onBlur();
             }}
             value={value}
             type={type}
