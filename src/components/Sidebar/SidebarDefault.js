@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 
+import BtnDefault from "components/Form/Buttons/BtnDefault";
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import { getCity, getState, getTypes } from "functions/requests/requestGet";
 
@@ -41,6 +42,12 @@ function SidebarDefault({ history, ...props }) {
     setPage(1);
   };
 
+  const ClearFields = () => {
+    setIdType(0);
+    setIdState(0);
+    setIdCity(0);
+  };
+
   return (
     <div className="sidebar-filters w-100">
       <h4 className="title-default">Filtros</h4>
@@ -73,6 +80,16 @@ function SidebarDefault({ history, ...props }) {
           value={idCity}
           options={optionsCity}
           customClass={"mb-0"}
+        />
+      </Col>
+
+      <Col md={12} className="mt-3">
+        <BtnDefault
+          testid="btn-sign-in"
+          size={"md"}
+          title={"Limpar"}
+          block={true}
+          onclick={ClearFields}
         />
       </Col>
     </div>
