@@ -11,7 +11,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import moment from "moment";
 
 import AvatarDefault from "components/Avatar/AvatarDefault";
-import { saveProject, removeProject } from "functions/requests/request_post";
+import { saveProject, removeProject } from "functions/requests/requestPost";
 
 function CardProject({ history, ...props }) {
   const user = useSelector((state) => state.user);

@@ -12,7 +12,7 @@ import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import moment from "moment";
 
 import AvatarDefault from "components/Avatar/AvatarDefault";
-import { saveProject, removeProject } from "functions/requests/request_post";
+import { saveProject, removeProject } from "functions/requests/requestPost";
 import { getProject, deleteProject } from "./js/api";
 import Loading from "components/Loading/Loading";
 import ModalEditProject from "components/Modals/ModalEditProject/ModalEditProject";

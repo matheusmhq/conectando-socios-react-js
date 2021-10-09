@@ -1,15 +1,12 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store, persistor } from "../store";
 import { PersistGate } from "redux-persist/integration/react";
-import { isAuthenticated } from "functions/utils";
 import AlertBox from "components/AlertBox/AlertBox";
 import "styles/global.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import MenuDefault from "components/Menu/MenuDefault";
-import FooterDefault from "components/Footer/FooterDefault";
 import ScrollToTop from "components/Others/ScrollToTop";
 import BtnBackToTop from "components/Others/BtnBackToTop";
 
@@ -25,37 +22,8 @@ import MyProjects from "pages/MyProjects/MyProjects";
 import Details from "pages/Details/Details";
 import User from "pages/User/User/User";
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) =>
-      isAuthenticated() ? (
-        <>
-          <MenuDefault {...props} />
-          <Component {...props} />
-          <FooterDefault />
-        </>
-      ) : (
-        <Redirect
-          to={{ pathname: "/login", state: { from: props.location } }}
-        />
-      )
-    }
-  />
-);
-
-const RouteWithMenu = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => (
-      <>
-        <MenuDefault {...props} />
-        <Component {...props} />
-        <FooterDefault />
-      </>
-    )}
-  />
-);
+import PrivateRoute from "./PrivateRoute";
+import RouteWithMenu from "./RouteWithMenu";
 
 function Routes() {
   return (

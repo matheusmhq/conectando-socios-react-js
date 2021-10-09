@@ -6,7 +6,7 @@ import InputDefault from "components/Form/Inputs/InputDefault";
 import TextareaDefault from "components/Form/Inputs/TextareaDefault";
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import BtnDefault from "components/Form/Buttons/BtnDefault";
-import { getTypes } from "functions/requests/request_get";
+import { getTypes } from "functions/requests/requestGet";
 import Loading from "components/Loading/Loading";
 import { save } from "./js/api";
 

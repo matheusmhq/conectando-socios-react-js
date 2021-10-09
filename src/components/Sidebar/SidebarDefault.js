@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 
 import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
-import { getCity, getState, getTypes } from "functions/requests/request_get";
+import { getCity, getState, getTypes } from "functions/requests/requestGet";
 
 function SidebarDefault({ history, ...props }) {
   const { idType, setIdType, idState, setIdState, idCity, setIdCity, setPage } =

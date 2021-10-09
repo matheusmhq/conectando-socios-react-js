@@ -12,7 +12,7 @@ import {
   getCity,
   getState,
   verifyEmail,
-} from "functions/requests/request_get";
+} from "functions/requests/requestGet";
 import { save } from "./js/api";
 
 function Register({ history }) {

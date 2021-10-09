@@ -11,7 +11,7 @@ import {
   getCity,
   getState,
   verifyEmail,
-} from "functions/requests/request_get";
+} from "functions/requests/requestGet";
 import { update } from "./js/api";
 import { usePrevious } from "functions/hooks";
 
