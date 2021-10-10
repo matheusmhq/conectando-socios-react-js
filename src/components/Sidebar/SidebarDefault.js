@@ -40,10 +40,12 @@ function SidebarDefault({ history, ...props }) {
     setIdType(0);
     setIdState(0);
     setIdCity(0);
+    setPage(1);
     setReload(!reload);
   };
 
   const ApplyFilter = () => {
+    setPage(1);
     setReload(!reload);
   };
 
