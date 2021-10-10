@@ -17,6 +17,7 @@ import PaginationDefault from "components/Pagination/PaginationDefault";
 function Home({ history }) {
   const user = useSelector((state) => state.user);
   const [loading, setLoading] = useState(true);
+  const [reload, setReload] = useState(false);
   const [listProjects, setListProjects] = useState([]);
   const [page, setPage] = useState(GetUrlParameter("page", 1));
   const [perPage, setPerPage] = useState(GetUrlParameter("perPage", 10));
@@ -37,7 +38,7 @@ function Home({ history }) {
 
   useEffect(() => {
     GetProjects();
-  }, [page, perPage, user, idType, idState, idCity]);
+  }, [page, perPage, user, reload]);
 
   const GetProjects = () => {
     var obj = {
@@ -103,6 +104,8 @@ function Home({ history }) {
                 idCity={idCity}
                 setIdCity={setIdCity}
                 setPage={setPage}
+                reload={reload}
+                setReload={setReload}
               />
             </Col>
 

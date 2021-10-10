@@ -6,8 +6,17 @@ import DropdownDefault from "components/Form/Dropdowns/DropdownDefault";
 import { getCity, getState, getTypes } from "functions/requests/requestGet";
 
 function SidebarDefault({ history, ...props }) {
-  const { idType, setIdType, idState, setIdState, idCity, setIdCity, setPage } =
-    props;
+  const {
+    idType,
+    setIdType,
+    idState,
+    setIdState,
+    idCity,
+    setIdCity,
+    setPage,
+    reload,
+    setReload,
+  } = props;
 
   const [loading, setLoading] = useState(false);
   const [optionsState, setOptionsState] = useState([]);
@@ -27,25 +36,15 @@ function SidebarDefault({ history, ...props }) {
     }
   }, [idState]);
 
-  const ChangeType = (type) => {
-    setIdType(type);
-    setPage(1);
-  };
-
-  const ChangeState = (state) => {
-    setIdState(state);
-    setPage(1);
-  };
-
-  const ChangeCity = (city) => {
-    setIdCity(city);
-    setPage(1);
-  };
-
   const ClearFields = () => {
     setIdType(0);
     setIdState(0);
     setIdCity(0);
+    setReload(!reload);
+  };
+
+  const ApplyFilter = () => {
+    setReload(!reload);
   };
 
   return (
@@ -56,7 +55,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Categoria"}
           name={"type"}
-          onChange={ChangeType}
+          onChange={setIdType}
           value={idType}
           options={optionsTypes}
         />
@@ -66,7 +65,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Estado"}
           name={"state"}
-          onChange={ChangeState}
+          onChange={setIdState}
           value={idState}
           options={optionsState}
         />
@@ -76,7 +75,7 @@ function SidebarDefault({ history, ...props }) {
         <DropdownDefault
           label={"Cidade"}
           name={"city"}
-          onChange={ChangeCity}
+          onChange={setIdCity}
           value={idCity}
           options={optionsCity}
           customClass={"mb-0"}
@@ -87,8 +86,19 @@ function SidebarDefault({ history, ...props }) {
         <BtnDefault
           testid="btn-sign-in"
           size={"md"}
+          title={"Aplicar"}
+          block={true}
+          onClick={ApplyFilter}
+        />
+      </Col>
+
+      <Col md={12} className="mt-3">
+        <BtnDefault
+          testid="btn-sign-in"
+          size={"md"}
           title={"Limpar"}
           block={true}
+          variant={"outline-secondary"}
           onClick={ClearFields}
         />
       </Col>

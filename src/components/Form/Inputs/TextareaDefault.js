@@ -44,6 +44,7 @@ const TextareaDefault = ({
           cols={cols}
           plaintext={plaintext}
           readOnly={readOnly}
+          style={customStyles}
           onChange={(e) => onChange(e.target.value)}
           onBlur={(e) => {
             if (onBlur !== undefined) onBlur();

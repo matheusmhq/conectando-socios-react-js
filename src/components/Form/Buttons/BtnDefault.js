@@ -21,7 +21,7 @@ const BtnDefault = ({
       block={block}
       disabled={disabled}
       style={customStyles}
-      variant={variant == undefined ? "primary" : variant}
+      variant={variant || "primary"}
       size={size}
       onClick={() => onClick()}
     >
@@ -31,7 +31,7 @@ const BtnDefault = ({
         <Spinner
           animation="border"
           role="status"
-          variant={loadingColor == undefined ? "light" : loadingColor}
+          variant={loadingColor || "light"}
           size="sm"
         />
       )}

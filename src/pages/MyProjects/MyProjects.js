@@ -19,6 +19,7 @@ function MyProjects({ history }) {
   const { tab } = useParams();
 
   const [loading, setLoading] = useState(true);
+  const [reload, setReload] = useState(false);
   const [listProjects, setListProjects] = useState([]);
   const [page, setPage] = useState(GetUrlParameter("page", 1));
   const [perPage, setPerPage] = useState(GetUrlParameter("perPage", 10));
@@ -40,7 +41,7 @@ function MyProjects({ history }) {
 
   useEffect(() => {
     GetProjects();
-  }, [page, perPage, user, idType, idState, idCity, tab]);
+  }, [page, perPage, user, tab, reload]);
 
   const GetProjects = () => {
     var obj = {
@@ -114,6 +115,8 @@ function MyProjects({ history }) {
                 idCity={idCity}
                 setIdCity={setIdCity}
                 setPage={setPage}
+                reload={reload}
+                setReload={setReload}
               />
             </Col>
 

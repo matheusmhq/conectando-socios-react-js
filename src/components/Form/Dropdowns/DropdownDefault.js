@@ -7,7 +7,6 @@ const DropdownDefault = ({
   name,
   value,
   required,
-  disabled,
   customStyles,
   options,
   obs,
@@ -29,6 +28,7 @@ const DropdownDefault = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         as="select"
+        style={customStyles}
         className={`validation-here ${border}`}
       >
         <option value={0}>Selecionar</option>
