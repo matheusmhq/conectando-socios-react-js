@@ -194,6 +194,15 @@ body {
   align-items: center;
 }
 
+.dropdown-user .nav-config {
+  color: var(--brand_gray);
+}
+
+.dropdown-user .nav-config:hover {
+  background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
+}
+
 .dropdown-user .user .user-name {
   text-transform: uppercase;
   font-weight: bold;
@@ -245,6 +254,10 @@ body {
 
 .dropdown-projects .item-projects:hover {
   background-color: var(--light_blue) !important;
+  color: var(--brand_blue) !important;
+}
+
+.dropdown-projects .active {
   color: var(--brand_blue) !important;
 }
 

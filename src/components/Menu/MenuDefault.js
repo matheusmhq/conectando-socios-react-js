@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Navbar, Nav, NavDropdown, Container, Button } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 import DropdownUser from "./components/DropdownUser";
 import logo from "assets/images/logo_white.png";
@@ -8,21 +9,17 @@ import logo from "assets/images/logo_white.png";
 function MenuDefault({ history }) {
   const user = useSelector((state) => state.user);
   const pathname = window.location.pathname.toLocaleLowerCase();
-  const [menuMain, setMenuMain] = useState(pathname);
-  const [menuUser, setMenuUser] = useState("");
+  const [dropdownShow, setDropdownShow] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
-    setMenuMain(pathname);
-    if (pathname.includes("user")) setMenuUser(pathname);
-  }, [pathname]);
-
-  function HandlerMenuMain(page) {
+    setDropdownShow(false);
     setExpanded(false);
-    setMenuUser("");
-    setMenuMain(page);
-    history.push(`${page}`);
-  }
+  }, [window.location.pathname]);
+
+  const handleToggle = (e) => {
+    setDropdownShow(e);
+  };
 
   return (
     <>
@@ -38,20 +35,14 @@ function MenuDefault({ history }) {
           <Navbar.Brand
             className="mr-0 mr-md-2"
             title={"Ir para a Home"}
-            onClick={() => HandlerMenuMain("/")}
+            onClick={() => history.push(`/`)}
           >
             <img className="main-logo" src={logo} />
           </Navbar.Brand>
 
           <div className="d-flex">
             {user?.data?.id != undefined ? (
-              <DropdownUser
-                customClass={"d-lg-none"}
-                history={history}
-                setMenuUser={setMenuUser}
-                menuUser={menuUser}
-                setMenuMain={setMenuMain}
-              />
+              <DropdownUser customClass={"d-lg-none"} history={history} />
             ) : (
               <Button
                 className="d-lg-none text-primary font-weight-bold"
@@ -69,54 +60,54 @@ function MenuDefault({ history }) {
           </div>
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto nav-menu">
-              <Nav.Link
-                className={menuMain === "/" && "active"}
-                onClick={() => HandlerMenuMain("/")}
+              <NavLink
+                className="nav-link"
+                to={"/"}
+                exact={true}
+                activeClassName="active"
               >
                 Home
-              </Nav.Link>
-              <Nav.Link
-                className={menuMain === "/how-work" && "active"}
-                onClick={() => HandlerMenuMain("/how-work")}
+              </NavLink>
+              <NavLink
+                className="nav-link"
+                to={"/how-work"}
+                activeClassName="active"
               >
                 Como Funciona
-              </Nav.Link>
-              <Nav.Link
-                className={menuMain === "/publish-project" && "active"}
-                onClick={() => HandlerMenuMain("/publish-project")}
+              </NavLink>
+              <NavLink
+                className="nav-link"
+                to={"/publish-project"}
+                activeClassName="active"
               >
                 Publicar Projeto
-              </Nav.Link>
+              </NavLink>
               <NavDropdown
+                onToggle={handleToggle}
+                show={dropdownShow}
                 className={`${
-                  menuMain.includes("/my-projects") && "active"
+                  pathname.includes("/my-projects") && "active"
                 } dropdown-projects`}
                 title="Meus Projetos"
                 id="collasible-nav-dropdown"
               >
-                <NavDropdown.Item
-                  className="item-projects"
-                  onClick={() => HandlerMenuMain("/my-projects/published")}
+                <NavLink
+                  className="item-projects dropdown-item"
+                  to={"/my-projects/published"}
                 >
                   Publicados
-                </NavDropdown.Item>
-                <NavDropdown.Item
-                  className="item-projects"
-                  onClick={() => HandlerMenuMain("/my-projects/saved")}
+                </NavLink>
+                <NavLink
+                  className="item-projects dropdown-item"
+                  to={"/my-projects/saved"}
                 >
                   Salvos
-                </NavDropdown.Item>
+                </NavLink>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
           {user?.data?.id != undefined ? (
-            <DropdownUser
-              customClass={"d-none d-lg-block"}
-              history={history}
-              setMenuUser={setMenuUser}
-              menuUser={menuUser}
-              setMenuMain={setMenuMain}
-            />
+            <DropdownUser customClass={"d-none d-lg-block"} history={history} />
           ) : (
             <Button
               className="d-none d-lg-block text-primary font-weight-bold"

@@ -68,7 +68,7 @@ function ChangePassword({ history }) {
         <Col md={12}>
           <InputDefault
             customClass="disable-paste"
-            label={"Confirmar a nova "}
+            label={"Confirmar a Nova Senha"}
             name={"confirm"}
             type={"password"}
             placeholder="Confirme e nova senha"

@@ -1,26 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Dropdown, NavDropdown } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+
 import { userLogoutDispatch } from "store/dispatchs/dispatchs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faCog } from "@fortawesome/free-solid-svg-icons";
 
 import AvatarDefault from "components/Avatar/AvatarDefault";
 
-const DropdownUser = ({
-  customClass,
-  history,
-  setMenuUser,
-  menuUser,
-  setMenuMain,
-}) => {
+const DropdownUser = ({ customClass, history }) => {
   const user = useSelector((state) => state.user);
+  const [dropdownShow, setDropdownShow] = useState(false);
 
-  function HandlerMenuUser(page) {
-    setMenuUser(page);
-    setMenuMain("");
-    history.push(`${page}`);
-  }
+  useEffect(() => {
+    setDropdownShow(false);
+  }, [window.location.pathname]);
+
+  const handleToggle = (e) => {
+    setDropdownShow(e);
+  };
 
   function Logout() {
     userLogoutDispatch();
@@ -36,6 +35,8 @@ const DropdownUser = ({
 
   return (
     <NavDropdown
+      onToggle={handleToggle}
+      show={dropdownShow}
       alignRight
       title={
         <div className="user" title={user.data?.name}>
@@ -49,15 +50,16 @@ const DropdownUser = ({
         <strong>{user.data.name}</strong>
       </NavDropdown.Header>
 
-      <NavDropdown.Item
-        onClick={() => HandlerMenuUser("/user/profile")}
-        className={menuUser.includes("user") && "active"}
+      <NavLink
+        to={"/user/profile"}
+        className="nav-link nav-config"
+        activeClassName={"active"}
       >
         <span className="dropdown-user-item">
           <FontAwesomeIcon icon={faCog} />
           <span>Configurações</span>
         </span>
-      </NavDropdown.Item>
+      </NavLink>
 
       <Dropdown.Divider />
 
