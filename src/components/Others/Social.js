@@ -19,8 +19,8 @@ const Social = ({
   twitter,
   projectTitle,
 }) => {
-  function RenderTooltip(text) {
-    return <Tooltip id="tooltip-top">Entrar em contato pelo {text}</Tooltip>;
+  function RenderTooltip(socialNetwork) {
+    return <Tooltip id="tooltip-top">Entrar em contato pelo {socialNetwork}</Tooltip>;
   }
 
   return (

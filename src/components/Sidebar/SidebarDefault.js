@@ -88,7 +88,7 @@ function SidebarDefault({ history, ...props }) {
         <BtnDefault
           testid="btn-sign-in"
           size={"md"}
-          title={"Aplicar"}
+          title={"Filtrar"}
           block={true}
           onClick={ApplyFilter}
         />
