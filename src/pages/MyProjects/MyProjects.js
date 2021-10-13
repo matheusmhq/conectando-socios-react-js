@@ -45,7 +45,6 @@ function MyProjects({ history }) {
 
   const GetProjects = () => {
     var obj = {
-      path: `/my-projects/${tab}`,
       params: [
         {
           name: "page",

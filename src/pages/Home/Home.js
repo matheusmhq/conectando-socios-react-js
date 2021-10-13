@@ -42,7 +42,6 @@ function Home({ history }) {
 
   const GetProjects = () => {
     var obj = {
-      path: "/",
       params: [
         {
           name: "page",

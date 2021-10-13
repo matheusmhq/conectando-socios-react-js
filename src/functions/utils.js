@@ -64,6 +64,7 @@ export function DisablePaste() {
 
 export function SetParamsUrl(history, obj) {
   var result = "";
+  const path = window.location.pathname;
   obj.params.map((item) => {
     if (
       item.value != null &&
@@ -71,13 +72,11 @@ export function SetParamsUrl(history, obj) {
       item.value != "" &&
       item.value != 0
     ) {
-      result += `${result == "" ? `${obj.path}?` : "&"}${item.name}=${
-        item.value
-      }`;
+      result += `${result == "" ? `${path}?` : "&"}${item.name}=${item.value}`;
     }
   });
   if (result != "") history.push(result);
-  else history.push(obj.params.path);
+  else history.push(path);
 }
 
 export function GenerateLinkWhatsapp(number, message) {
