@@ -86,11 +86,12 @@ function Home({ history }) {
     );
   };
 
-  if (loading) return <Loading customClass="mt-4" />;
-  else {
-    return (
-      <div className="full-height">
-        <BannerDefault />
+  return (
+    <div className="full-height">
+      <BannerDefault />
+      {loading ? (
+        <Loading customClass="mt-4" />
+      ) : (
         <Container fluid className="my-4 my-md-5">
           <Row>
             <Col md={3}>
@@ -167,9 +168,9 @@ function Home({ history }) {
             </Col>
           </Row>
         </Container>
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
 }
 
 export default Home;
