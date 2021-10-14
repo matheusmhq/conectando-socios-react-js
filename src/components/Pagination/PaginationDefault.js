@@ -8,6 +8,8 @@ import {
 } from "react-bootstrap";
 
 const listPerPage = [10, 15, 20];
+const qtyOfPagesOnLeftOfCurrent = 1;
+const qtyOfPagesOnRightOfCurrent = 3;
 
 const PaginationDefault = ({
   setPage,
@@ -18,9 +20,19 @@ const PaginationDefault = ({
   lastPage,
 }) => {
   const BuildPages = () => {
+    page = Number(page);
+    lastPage = Number(lastPage);
+
     var pages = [];
-    var last = lastPage > 1 ? lastPage : 1;
-    for (let i = 1; i <= last; i++) {
+
+    //Pages on left of current
+    var first = page > 1 ? page - qtyOfPagesOnLeftOfCurrent : page;
+
+    //Pages on right of current
+    var last = lastPage > 1 ? page + qtyOfPagesOnRightOfCurrent : 1;
+    if (last > lastPage) last = lastPage;
+
+    for (let i = first; i <= last; i++) {
       pages.push(
         <Pagination.Item onClick={() => setPage(i)} key={i} active={i == page}>
           {i}

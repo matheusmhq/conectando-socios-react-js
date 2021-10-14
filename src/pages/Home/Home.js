@@ -155,7 +155,15 @@ function Home({ history }) {
                   );
                 })
               )}
-              {listProjects.length > 0 && (
+              <PaginationDefault
+                setPage={setPage}
+                page={page}
+                setPerPage={setPerPage}
+                perPage={perPage}
+                totalResults={totalResults}
+                lastPage={lastPage}
+              />
+              {/* {listProjects.length > 0 && (
                 <PaginationDefault
                   setPage={setPage}
                   page={page}
@@ -164,7 +172,7 @@ function Home({ history }) {
                   totalResults={totalResults}
                   lastPage={lastPage}
                 />
-              )}
+              )} */}
             </Col>
           </Row>
         </Container>
