@@ -74,7 +74,7 @@ As principais bibliotecas usadas nesse projeto:
 - Clonar esse repositório
 
   ```
-  git clone https://github.com/matheusmhq/conectando-socios-react-js
+  git clone git@github.com:matheusmhq/conectando-socios-react-js.git
 
   cd conectando-socios-react-js
   ```
@@ -82,11 +82,23 @@ As principais bibliotecas usadas nesse projeto:
 - Instale as dependências
 
   ```
-  yarn install ou npm install
+  yarn install
   ```
 
-- Agora é só rodar **yarn start** ou **npm start**
+- Agora é só rodar **yarn start**
 
 - A aplicação irá abrir no seguinte endereço `http://localhost:3000`
 
-- Bons estudos pra você! 😀😀😀
+## Testes
+
+- Testes unitários (Jest e Testing Library)
+
+  ```
+  yarn test
+  ```
+
+- Testes e2e (Cypress)
+
+  ```
+  yarn cypress-open
+  ```
