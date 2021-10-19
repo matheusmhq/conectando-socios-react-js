@@ -33,7 +33,7 @@ function PublishProject({ history }) {
     return (
       <Container fluid className="my-4 my-md-5">
         <div className="bg-white p-4 container-publish-project">
-          <h4 className="title-default ml-0">Publicar um novo projeto</h4>
+          <h4 className="title-default ml-0">Publicar novo projeto</h4>
           <Row>
             <Col md={8}>
               <InputDefault
