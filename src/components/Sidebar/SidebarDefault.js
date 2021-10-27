@@ -49,6 +49,8 @@ function SidebarDefault({ history, ...props }) {
     setReload(!reload);
   };
 
+  console.log("idType " + idType);
+
   return (
     <div className="sidebar-filters w-100">
       <h4 className="title-default">Filtros</h4>
@@ -86,7 +88,7 @@ function SidebarDefault({ history, ...props }) {
 
       <Col md={12} className="mt-3">
         <BtnDefault
-          testid="btn-sign-in"
+          disabled={idType > 0 || idCity > 0 || idState > 0 ? false : true}
           size={"md"}
           title={"Filtrar"}
           block={true}
@@ -96,7 +98,7 @@ function SidebarDefault({ history, ...props }) {
 
       <Col md={12} className="mt-3">
         <BtnDefault
-          testid="btn-sign-in"
+          disabled={idType == 0 && idCity == 0 && idState == 0 ? true : false}
           size={"md"}
           title={"Limpar"}
           block={true}
