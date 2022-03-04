@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="#demo">Demo</a> •
+  <a href="#demo">Links</a> •
   <a href="#bibliotecas">Bibliotecas</a> •
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#iniciando">Iniciando</a>   
@@ -31,7 +31,7 @@
     <img style="border-radius: 5px" src="src/assets/images/demo.gif" alt="Conectando Sócios React js">
 </p>
 
-# Demo
+# Links
 
 [Conectando Sócios - Live ◀️](https://conectando-socios.netlify.app/)
 
