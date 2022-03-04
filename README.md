@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="#demo">Links</a> •
+  <a href="#links">Links</a> •
   <a href="#bibliotecas">Bibliotecas</a> •
   <a href="#funcionalidades">Funcionalidades</a> •
   <a href="#iniciando">Iniciando</a>   
